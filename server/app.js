@@ -40,7 +40,8 @@ app.get("/randomQuestion/randomAnswers/", (req, res) => {
       }             
     }
   }else {
-    res.status(500).send("Question is not available yet, generate it first.")
+    
+    res.status(404).send("Question is not available yet, generate it first.")
   }
      
   res.send(arrAnswers);
