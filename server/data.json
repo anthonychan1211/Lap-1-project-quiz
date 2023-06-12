@@ -3,110 +3,60 @@
     "author": "Leonardo da Vinci",
     "name": "Mona Lisa",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1374px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
-    "wrongAuthors": [
-      "Pablo Picasso",
-      "Vincent van Gogh",
-      "Salvador Dalí",
-      "Rembrandt"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Vincent van Gogh",
     "name": "The Starry Night",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/2560px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-    "wrongAuthors": [
-      "Claude Monet",
-      "Pablo Picasso",
-      "Salvador Dalí",
-      "Henri Matisse"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Pablo Picasso",
     "name": "Guernica",
     "imageUrl": "https://static3.museoreinasofia.es/sites/default/files/obras/DE00050_0.jpg",
-    "wrongAuthors": [
-      "Salvador Dalí",
-      "Vincent van Gogh",
-      "Rembrandt",
-      "Henri Rousseau"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Michelangelo",
     "name": "The Creation of Adam",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Creaci%C3%B3n_de_Ad%C3%A1n.jpg/2560px-Creaci%C3%B3n_de_Ad%C3%A1n.jpg",
-    "wrongAuthors": [
-      "Rembrandt",
-      "Vincent van Gogh",
-      "Claude Monet",
-      "Edgar Degas"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Claude Monet",
     "name": "Water Lilies",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/The_Water-Lily_Pond_-_Google_Arts_%26_Culture.jpg/2085px-The_Water-Lily_Pond_-_Google_Arts_%26_Culture.jpg",
-    "wrongAuthors": [
-      "Edgar Degas",
-      "Vincent van Gogh",
-      "Pablo Picasso",
-      "Henri Matisse"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Salvador Dalí",
     "name": "The Persistence of Memory",
     "imageUrl": "https://pixelz.cc/wp-content/uploads/2018/07/the-persistence-of-memory-painting-by-salvador-dali-uhd-4k-wallpaper.jpg",
-    "wrongAuthors": [
-      "Rembrandt",
-      "Vincent van Gogh",
-      "Claude Monet",
-      "Edgar Degas"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Edvard Munch",
     "name": "The Scream",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
-    "wrongAuthors": [
-      "Henri Rousseau",
-      "Vincent van Gogh",
-      "Claude Monet",
-      "Henri Matisse"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Johannes Vermeer",
     "name": "Girl with a Pearl Earring",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
-    "wrongAuthors": [
-      "Rembrandt",
-      "Vincent van Gogh",
-      "Claude Monet",
-      "Henri Rousseau"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Gustav Klimt",
     "name": "The Kiss",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Klimt_-_Der_Kuss.jpeg/2073px-Klimt_-_Der_Kuss.jpeg",
-    "wrongAuthors": [
-      "Pablo Picasso",
-      "Vincent van Gogh",
-      "Salvador Dalí",
-      "Edgar Degas"
-    ]
+    "wrongAuthors": []
   },
   {
     "author": "Grant Wood",
     "name": "American Gothic",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
-    "wrongAuthors": [
-      "Rembrandt",
-      "Vincent van Gogh",
-      "Claude Monet",
-      "Henri Matisse"
-    ]
+    "wrongAuthors": []
   }
 ]
