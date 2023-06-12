@@ -1,4 +1,4 @@
-async function randomQuestion(e) {  
+async function randomQuestions(e) {  
   e.preventDefault();   
 
   const options = {
@@ -8,12 +8,13 @@ async function randomQuestion(e) {
       }
   }
   try {    
-    const response = await fetch(`http://localhost:3000/randomQuestion`, options);   
-    const question = await response.json()  
+    const response = await fetch(`http://localhost:3000/randomQuestions`, options);   
+    const questions = await response.json()  
 
-    const paintingImageURL = question.imageUrl;
-    const choice1 = `${question.name} - ${question.author}`;   
+    const paintingImageURL = questions.imageUrl;
+    const choice1 = `${questions.name} - ${questions.author}`;   
 
+    console.log(questions)
   } catch (error) {
     console.log(error);
   }
@@ -30,7 +31,7 @@ async function randomAnswers(e) {
   }
   try {    
      
-    const response = await fetch(`http://localhost:3000/randomQuestion/randomAnswers`, options);
+    const response = await fetch(`http://localhost:3000/randomQuestions/randomAnswers`, options);
     const answers = await response.json()
    
     const choice2 = `${answers[0].name} - ${answers[0].author}`;

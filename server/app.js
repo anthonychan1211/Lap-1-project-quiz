@@ -8,43 +8,64 @@ app.use(cors());
 app.use(express.json());
 app.use(logger);
 
-//variable that will store the obj that is is being used for the question
-let question = null;
+let questions = [];
 
 app.get("/", (req, res) => {
   console.log("ALL THE DATA");
   res.send(data);
 });
 
-//will pick randomly an object for the question 
-app.get("/randomQuestion/", (req, res) => {
-  const randomIDX = Math.floor(Math.random() * data.length); 
+//will pick randomly 10 objects for the 10 questions 
+app.get("/randomQuestions/", (req, res) => {
+  
+  let randomIDX = null;    
 
-  question = data[randomIDX]  
-  res.send(question);
-})
+  try {
 
-//will randomly generate 4 objects for the multiple choice questions and make sure that its not the same as the question. Need to generate the question first
-app.get("/randomQuestion/randomAnswers/", (req, res) => {  
-  const arrAnswers = [];
-  let randomIDX = null;   
-
-  if(question != null) {
-
-    while(arrAnswers.length < 4) {
+    while(questions.length < 10) {
       randomIDX = Math.floor(Math.random() * data.length); 
   
-      if(arrAnswers.some(obj => data[randomIDX].name === obj.name && question.name === obj.name) === false){
-  
-        arrAnswers.push(data[randomIDX]);        
-      }             
+      if(questions.some(obj => data[randomIDX].name === obj.name) === false){
+
+        questions.push(data[randomIDX]);                        
+      } 
+                 
     }
+    
+  } catch (error) {
+
+    console.log(error);
+    
+  }
+      
+     
+  res.send(questions);
+})
+
+//will randomly generate 10 objects for the questions and 4 multiple choice wrong answers inside obj.wrongAuthors. Need to generate the question first
+app.get("/randomQuestions/randomAnswers/", (req, res) => {  
+  
+  let randomIDX = null;   
+
+  if(questions != null) {
+
+    for(obj of questions) {
+      
+      while(obj['wrongAuthors'].length < 4){
+        randomIDX = Math.floor(Math.random() * data.length); 
+        
+        if(obj['wrongAuthors'].some(authors => data[randomIDX].author === authors) === false && obj.author != data[randomIDX].author) {          
+          obj['wrongAuthors'].push(data[randomIDX].author);
+        }
+      }
+    }
+  
   }else {
     
     res.status(404).send("Question is not available yet, generate it first.")
   }
      
-  res.send(arrAnswers);
+  res.send(data);
 })
 
 module.exports = app;
