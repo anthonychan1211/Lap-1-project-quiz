@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 //will pick randomly 10 objects for the 10 questions 
 app.get("/randomQuestions/", (req, res) => {
   
+  questionsAndAnswers = []  
   let randomIDX = null;    
 
   try {
@@ -34,10 +35,11 @@ app.get("/randomQuestions/", (req, res) => {
     
   } catch (error) {
 
-    console.log(error);
-    
-  }     
-  res.send(questions);
+    console.log(error);    
+  }   
+
+  questionsAndAnswers = questions;  
+  res.send(questions);  
   questions = []
 })
 
@@ -46,9 +48,9 @@ app.get("/randomQuestions/randomAnswers/", (req, res) => {
   
   let randomIDX = null;   
 
-  if(questions != null) {
+  if(questionsAndAnswers != null) {
 
-    for(obj of questions) {
+    for(obj of questionsAndAnswers) {
       
       while(obj['wrongAuthors'].length < 4){
         randomIDX = Math.floor(Math.random() * data.length); 
@@ -64,8 +66,8 @@ app.get("/randomQuestions/randomAnswers/", (req, res) => {
     res.status(404).send("Question is not available yet, generate it first.")
   }
      
-  res.send(questions);
-  questionsAndAnswers = []
+  res.send(questionsAndAnswers);  
+  
 })
 
 module.exports = app;
