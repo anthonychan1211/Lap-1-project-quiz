@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(logger);
 
 let questions = [];
+let questionsAndAnswers = [];
 
 app.get("/", (req, res) => {
   console.log("ALL THE DATA");
@@ -37,6 +38,7 @@ app.get("/randomQuestions/", (req, res) => {
     
   }     
   res.send(questions);
+  questions = []
 })
 
 //will randomly generate 10 objects for the questions and 4 multiple choice wrong answers inside obj.wrongAuthors. Need to generate the question first
@@ -62,7 +64,8 @@ app.get("/randomQuestions/randomAnswers/", (req, res) => {
     res.status(404).send("Question is not available yet, generate it first.")
   }
      
-  res.send(data);
+  res.send(questions);
+  questionsAndAnswers = []
 })
 
 module.exports = app;
