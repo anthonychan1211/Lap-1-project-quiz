@@ -28,17 +28,14 @@ app.get("/randomQuestions/", (req, res) => {
       if(questions.some(obj => data[randomIDX].name === obj.name) === false){
 
         questions.push(data[randomIDX]);                        
-      } 
-                 
+      }                  
     }
     
   } catch (error) {
 
     console.log(error);
     
-  }
-      
-     
+  }     
   res.send(questions);
 })
 
