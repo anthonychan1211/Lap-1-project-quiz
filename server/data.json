@@ -68,5 +68,75 @@
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
     "wrongAuthors": [],
     "level": "easy"
+  },
+  {
+    "author": "Vincent van Gogh",
+    "name": "The Red Vineyard",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Vincent_van_Gogh_-_Red_Vineyard_at_Arles_%281888%29.jpg/2560px-Vincent_van_Gogh_-_Red_Vineyard_at_Arles_%281888%29.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "author": "Paul Cézanne",
+    "name": "The Card Players",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cezanne_The_Card_Players_Metmuseum.jpg/2560px-Cezanne_The_Card_Players_Metmuseum.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "author": "Henri Rousseau",
+    "name": "The Sleeping Gypsy",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/La_Boh%C3%A9mienne_endormie.jpg/2560px-La_Boh%C3%A9mienne_endormie.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "The Storm on the Sea of Galilee",
+    "author": "Rembrandt",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/1648px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "The Fighting Temeraire",
+    "author": "J.M.W. Turner",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Turner%2C_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg/2560px-Turner%2C_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "Blue Dancers",
+    "author": "Edgar Degas",
+    "imageUrl": "https://uploads3.wikiart.org/images/edgar-degas/blue-dancers.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "Nocturne in Black and Gold - The Falling Rocket",
+    "author": "James Abbott McNeill Whistler",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Whistler-Nocturne_in_black_and_gold.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "The Great Wave off Kanagawa",
+    "author": "Katsushika Hokusai",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/2560px-The_Great_Wave_off_Kanagawa.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "A Sunday on La Grande Jatte",
+    "author": "Georges Seurat",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg/2560px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
+  },
+  {
+    "name": "The Hay Wain",
+    "author": "John Constable",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/John_Constable_The_Hay_Wain.jpg",
+    "wrongAuthors": [],
+    "level": "hard"
   }
 ]
