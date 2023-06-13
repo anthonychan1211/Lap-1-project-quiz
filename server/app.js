@@ -40,18 +40,22 @@ app.get("/", (req, res) => {
 });
 
 //will pick randomly 10 objects for the 10 questions 
-app.get("/randomQuestions/", (req, res) => {  
+app.get("/randomQuestions/hard", (req, res) => {  
     
-  let randomIDX = null;    
+  let randomIDX = null;   
+  
+  const hardLvlData = data.filter(obj => {
+    return obj.level === "hard";
+  })
 
   try {
 
     while(questions.length < 10) {
       randomIDX = Math.floor(Math.random() * data.length); 
   
-      if(questions.some(obj => data[randomIDX].name === obj.name) === false){
+      if(questions.some(obj => hardLvlData[randomIDX].name === obj.name) === false){
 
-        questions.push({...data[randomIDX], wrongAuthors: []});                        
+        questions.push({...hardLvlData[randomIDX], wrongAuthors: []});                        
       }                  
     }
     
@@ -59,6 +63,39 @@ app.get("/randomQuestions/", (req, res) => {
 
     console.log(error);    
   } 
+  
+
+  generateRandomAnswers();
+
+  res.send(questions);  
+  questions = []
+})
+
+app.get("/randomQuestions/easy", (req, res) => {  
+    
+  let randomIDX = null;  
+
+  const easyLvlData = data.filter(obj => {
+    return obj.level === "easy";
+  })  
+
+  try {
+
+    while(questions.length < 10) {
+      randomIDX = Math.floor(Math.random() * data.length); 
+  
+      if(questions.some(obj => easyLvlData[randomIDX].name === obj.name) === false){
+
+        questions.push({...easyLvlData[randomIDX], wrongAuthors: []});                        
+      }                  
+    }
+    
+  } catch (error) {
+
+    console.log(error);    
+  } 
+
+  
 
   generateRandomAnswers();
 
