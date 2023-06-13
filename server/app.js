@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const data = require("./data.json");
-const cors = require('cors');
+const cors = require("cors");
 const logger = require("./logger");
 
 app.use(cors());
@@ -11,33 +11,33 @@ app.use(logger);
 let questions = [];
 //will randomly generate 4 multiple choice wrong answers inside obj.wrongAuthors. Need to generate the question first
 const generateRandomAnswers = () => {
+  let randomIDX = null;
 
-  let randomIDX = null;   
+  if (questions.length != 0) {
+    for (const obj of questions) {
+      while (obj["wrongAuthors"].length < 4) {
+        randomIDX = Math.floor(Math.random() * data.length);
 
-  if(questions.length != 0) {
-
-    for(const obj of questions) {
-      
-      while(obj['wrongAuthors'].length < 4){
-        randomIDX = Math.floor(Math.random() * data.length); 
-        
-        if(obj['wrongAuthors'].some(authors => data[randomIDX].author === authors) === false && obj.author != data[randomIDX].author) {          
-
-          obj['wrongAuthors'].push(data[randomIDX].author);
+        if (
+          obj["wrongAuthors"].some(
+            (authors) => data[randomIDX].author === authors
+          ) === false &&
+          obj.author != data[randomIDX].author
+        ) {
+          obj["wrongAuthors"].push(data[randomIDX].author);
         }
       }
-    }  
-
-  }else {
-    
-    res.status(404).send("Question is not available yet, generate it first.")
+    }
+  } else {
+    res.status(404).send("Question is not available yet, generate it first.");
   }
-}
+};
 
 app.get("/", (req, res) => {
   console.log("ALL THE DATA");
   res.send(data);
 });
+
 
 //will pick randomly 10 objects for the 10 questions 
 app.get("/randomQuestions/hard", (req, res) => {  
@@ -55,10 +55,28 @@ app.get("/randomQuestions/hard", (req, res) => {
       if(questions.some(obj => hardLvlData[randomIDX].name === obj.name) === false){
 
         questions.push({...hardLvlData[randomIDX], wrongAuthors: []});                        
-      }                  
+
+//will pick randomly 10 objects for the 10 questions
+app.get("/randomQuestions/hard", (req, res) => {
+  let randomIDX = null;
+
+  const hardLvlData = data.filter((obj) => {
+    return obj.level === "hard";
+  });
+
+  try {
+    while (questions.length < 10) {
+      randomIDX = Math.floor(Math.random() * hardLvlData.length);
+      if (
+        questions.some((obj) => hardLvlData[randomIDX].name === obj.name) ===
+        false
+      ) {
+        questions.push({ ...hardLvlData[randomIDX], wrongAuthors: [] });
+      }
+
     }
-    
   } catch (error) {
+
 
     console.log(error);    
   }   
@@ -73,11 +91,24 @@ app.get("/randomQuestions/easy", (req, res) => {
     
   let randomIDX = null;  
 
-  const easyLvlData = data.filter(obj => {
+    console.log(error);
+  }
+
+  generateRandomAnswers();
+  res.send(questions);
+  questions = [];
+});
+
+app.get("/randomQuestions/easy", (req, res) => {
+  let randomIDX = null;
+
+
+  const easyLvlData = data.filter((obj) => {
     return obj.level === "easy";
-  })  
+  });
 
   try {
+
 
     while(questions.length < 10) {
       randomIDX = Math.floor(Math.random() * easyLvlData.length); 
@@ -86,19 +117,26 @@ app.get("/randomQuestions/easy", (req, res) => {
 
         questions.push({...easyLvlData[randomIDX], wrongAuthors: []});                        
       }                  
+
+    while (questions.length < 10) {
+      randomIDX = Math.floor(Math.random() * easyLvlData.length);
+
+      if (
+        questions.some((obj) => easyLvlData[randomIDX].name === obj.name) ===
+        false
+      ) {
+        questions.push({ ...easyLvlData[randomIDX], wrongAuthors: [] });
+      }
+
     }
-    
   } catch (error) {
-
-    console.log(error);    
-  } 
-
-  
+    console.log(error);
+  }
 
   generateRandomAnswers();
 
-  res.send(questions);  
-  questions = []
-})
+  res.send(questions);
+  questions = [];
+});
 
 module.exports = app;
