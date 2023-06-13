@@ -1,0 +1,67 @@
+body {
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .topBar p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+  }
+  
+  .topBar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+  
+  .answers {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .image-container {
+    width: 50%;
+    height: 500px;
+    flex: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    
+  }
+
+  .image-container img {    
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+
+  .guess0 {
+    transform: scale(10);
+  } 
+
+  .guess1 {
+    transform: scale(8);
+
+  }
+
+  .guess2 {
+    transform: scale(5);
+
+  }
+
+  .guess3 {
+    transform: scale(2);
+
+  }  
+
+  button {
+    padding: 5px;
+    font-size: 15px;
+  }
