@@ -45,7 +45,7 @@ const displayQues = async (quesNum) => {
     choice.textContent = randomizeChoices[i];
     choice
     answerSection.appendChild(choice);
-    choice.addEventListener("click", () => {
+    choice.addEventListener('click', () => {
       if (choice.textContent == correctAuthor){
         alert('correct')
         quesNum++
