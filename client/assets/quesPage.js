@@ -1,17 +1,19 @@
-const fetchData = async () => {
-  const res = await fetch("http://localhost:3000/randomQuestions");
+const fetchData = async (difficulty) => {
+  const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`);
   const data = await res.json();
   return data;
 };
 
-const displayTopBar = (quesNum, wrongGuess,score) => {
+
+const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.textContent=""
   const quesProgress = document.createElement("p");
   quesProgress.textContent = `Q${quesNum}/5`;
   topBar.appendChild(quesProgress);
   
   const scoreBar = document.createElement("p")
-  scoreBar.textContent = score
+  scoreBar.textContent = `Score: ${score}`
+  topBar.appendChild(scoreBar)
 
   const instruction = document.createElement("p");
   instruction.textContent = "Select the author of the painting";
@@ -24,17 +26,24 @@ const displayTopBar = (quesNum, wrongGuess,score) => {
   topBar.appendChild(chancesLeft);
 }
 
+let data = null;
+let fetchStatus = false
+
 const displayQues = async (quesNum) => {
   questionSection.textContent=""
   answerSection.textContent=""
   resultsSection.textContent=""
 
-  const data = await fetchData();
-  const quesImage = document.createElement("img");
-  let correctAuthor = data[quesNum-1].author
+  if (!fetchStatus){
+    data = await fetchData("hard")
+    fetchStatus = true
+  }
 
+  const quesImage = document.createElement("img");
+  quesImage.id="painting"
+  let correctAuthor = data[quesNum-1].author
   quesImage.src = data[quesNum - 1].imageUrl;
-  quesImage.alt = "Q1 picture";
+  quesImage.alt = `Q${quesNum} painting`;
   quesImage.className='guess0'
   questionSection.appendChild(quesImage);
 
@@ -45,8 +54,8 @@ const displayQues = async (quesNum) => {
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
-    choice
     answerSection.appendChild(choice);
+
     choice.addEventListener('click', () => {
       let correct = false
       if (choice.textContent==correctAuthor){
@@ -67,21 +76,20 @@ const checkAnswer = (correct) => {
   quesImage = document.querySelector('.image-container img')
   if (correct==true && wrongGuess<5){
     // alert('correct')
-    results('correct')
+    zoomLevel = 10
     quesNum++
-    //runGame(quesNum,0)
+    results('correct')
+    painting.style.transform = `scale(${1})`
   } else {
     wrongGuess++
     topBar.childNodes[2].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
       // alert ('game over')
-      quesImage.classList.remove("guess3")
-      questionSection.style.objectFit='none'
+      painting.style.transform = `scale(${1})`
       wrongGuess=0
       results('fail')
-      //next question button
     } else {
-      quesImage.className=`guess${wrongGuess}`
+     zoomOut()
       // alert('incorrect')
       results('incorrect')
     }
@@ -113,6 +121,12 @@ const results = (result) => {
   }
 }
 
+const zoomOut = () => {
+  const painting = document.getElementById("painting");
+  zoomLevel -= 2;
+  painting.style.transform = `scale(${zoomLevel})`
+}
+
 const nextQues = () => {
   const nextQButton = document.createElement('button')
   nextQButton.textContent = "Next question"
@@ -131,6 +145,8 @@ const runGame = (quesNum,wrongGuess,score) => {
   if (quesNum<6) {
     displayTopBar(quesNum, wrongGuess,score);
     displayQues(quesNum)
+  } else {
+    fetchStatus = false
   }
 }
 
@@ -139,6 +155,7 @@ const questionSection = document.querySelector(".image-container");
 const answerSection = document.querySelector(".answers");
 const resultsSection = document.querySelector(".results")
 
+let zoomLevel =10
 let quesNum = 1;
 let wrongGuess = 0;
 let score = 0
