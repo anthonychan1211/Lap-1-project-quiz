@@ -36,9 +36,8 @@ body {
   translate: -50% -50%;
   object-fit: contain;
 }
-#painting {
-  width: 100%;
-  height: 100%;  
+#painting { 
+  object-fit: contain;
   transition-property: transform;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
