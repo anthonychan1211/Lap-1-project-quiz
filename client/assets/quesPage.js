@@ -1,6 +1,6 @@
 const fetchData = async (difficulty) => {
   const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`);
-  const data = await res.json();
+  const data = await res.json();  
   return data;
 };
 
@@ -29,6 +29,8 @@ const displayTopBar = (quesNum,wrongGuess,score) => {
 let data = null;
 let fetchStatus = false
 
+let data = null;
+let fetchStatus = false;
 const displayQues = async (quesNum) => {
   questionSection.textContent=""
   answerSection.textContent=""
@@ -44,7 +46,6 @@ const displayQues = async (quesNum) => {
   let correctAuthor = data[quesNum-1].author
   quesImage.src = data[quesNum - 1].imageUrl;
   quesImage.alt = `Q${quesNum} painting`;
-  quesImage.className='guess0'
   questionSection.appendChild(quesImage);
 
   let randomizeChoices = data[quesNum - 1].wrongAuthors;
@@ -63,7 +64,6 @@ const displayQues = async (quesNum) => {
       } else {
         correct = false
         choice.disabled=true
-        //choice.style.backgroundColor=red
       }
       checkAnswer(correct)
     })
@@ -150,6 +150,15 @@ const runGame = (quesNum,wrongGuess,score) => {
   }
 }
 
+const zoomOut = () => {
+  
+  const painting = document.getElementById("painting");
+  zoomLevel -= (40/100) * zoomLevel;
+  painting.style.transform = `scale(${zoomLevel})`
+
+}
+
+
 const topBar = document.querySelector(".topBar");
 const questionSection = document.querySelector(".image-container");
 const answerSection = document.querySelector(".answers");
@@ -158,5 +167,7 @@ const resultsSection = document.querySelector(".results")
 let zoomLevel =10
 let quesNum = 1;
 let wrongGuess = 0;
-let score = 0
-runGame(quesNum,wrongGuess,score)
+let score = 0;
+
+
+runGame(quesNum,wrongGuess,score);
