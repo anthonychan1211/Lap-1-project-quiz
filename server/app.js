@@ -38,6 +38,24 @@ app.get("/", (req, res) => {
   res.send(data);
 });
 
+
+//will pick randomly 10 objects for the 10 questions 
+app.get("/randomQuestions/hard", (req, res) => {  
+    
+  let randomIDX = null;   
+  
+  const hardLvlData = data.filter(obj => obj.level === "hard");
+  
+  console.log(hardLvlData)
+  try {
+
+    while(questions.length < 10) {
+      randomIDX = Math.floor(Math.random() * hardLvlData.length); 
+  
+      if(questions.some(obj => hardLvlData[randomIDX].name === obj.name) === false){
+
+        questions.push({...hardLvlData[randomIDX], wrongAuthors: []});                        
+
 //will pick randomly 10 objects for the 10 questions
 app.get("/randomQuestions/hard", (req, res) => {
   let randomIDX = null;
@@ -55,8 +73,24 @@ app.get("/randomQuestions/hard", (req, res) => {
       ) {
         questions.push({ ...hardLvlData[randomIDX], wrongAuthors: [] });
       }
+
     }
   } catch (error) {
+
+
+    console.log(error);    
+  }   
+
+  generateRandomAnswers();
+  console.log(questions)
+  res.send(questions);  
+  questions = []
+})
+
+app.get("/randomQuestions/easy", (req, res) => {  
+    
+  let randomIDX = null;  
+
     console.log(error);
   }
 
@@ -68,11 +102,22 @@ app.get("/randomQuestions/hard", (req, res) => {
 app.get("/randomQuestions/easy", (req, res) => {
   let randomIDX = null;
 
+
   const easyLvlData = data.filter((obj) => {
     return obj.level === "easy";
   });
 
   try {
+
+
+    while(questions.length < 10) {
+      randomIDX = Math.floor(Math.random() * easyLvlData.length); 
+  
+      if(questions.some(obj => easyLvlData[randomIDX].name === obj.name) === false){
+
+        questions.push({...easyLvlData[randomIDX], wrongAuthors: []});                        
+      }                  
+
     while (questions.length < 10) {
       randomIDX = Math.floor(Math.random() * easyLvlData.length);
 
@@ -82,6 +127,7 @@ app.get("/randomQuestions/easy", (req, res) => {
       ) {
         questions.push({ ...easyLvlData[randomIDX], wrongAuthors: [] });
       }
+
     }
   } catch (error) {
     console.log(error);

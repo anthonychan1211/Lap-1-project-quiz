@@ -1,6 +1,7 @@
 const fetchData = async (difficulty) => {
   const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`);
   const data = await res.json();
+  console.log(data)
   return data;
 };
 
@@ -24,17 +25,25 @@ const displayTopBar = (quesNum, wrongGuess,score) => {
   topBar.appendChild(chancesLeft);
 };
 
+let data = null;
+let fetchStatus = false
 const displayQues = async (quesNum) => {
+  
   questionSection.textContent=""
-  answerSection.textContent=""
-  const data = await fetchData("hard");
-  const quesImage = document.createElement("img");
-  quesImage.id = "painting"
-  let correctAuthor = data[quesNum-1].author
+  answerSection.textContent=""  
+  
 
+  if(!fetchStatus) {
+    data = await fetchData("hard");
+    fetchStatus = true
+  }  
+  
+  const quesImage = document.createElement("img");
+  quesImage.id = "painting"  
+  let correctAuthor = data[quesNum-1].author  
   quesImage.src = data[quesNum - 1].imageUrl;
   quesImage.alt = "Q1 picture";
-  //quesImage.className='guess0'
+ 
   questionSection.appendChild(quesImage);
 
   let randomizeChoices = data[quesNum - 1].wrongAuthors;
@@ -79,12 +88,17 @@ const displayQues = async (quesNum) => {
 
 //need to fix the run game count
 const runGame = (quesNum,wrongGuess,score) => {
+
+  
+  
+  
   if (quesNum<6) {
     displayTopBar(quesNum, wrongGuess,score);
     displayQues(quesNum)
   } else {
     //cant finish the game, you need to go to next question
     alert ('you finished the game')
+    fetchStatus = false;
   }
 }
 
