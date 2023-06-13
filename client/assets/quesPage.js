@@ -46,28 +46,42 @@ const displayQues = async (quesNum) => {
     choice
     answerSection.appendChild(choice);
     choice.addEventListener('click', () => {
-      if (choice.textContent == correctAuthor){
-        alert('correct')
-        quesNum++
-        wrongGuess=0
-        runGame(quesNum,wrongGuess)
+      let correct = false
+      if (choice.textContent==correctAuthor){
+        correct = true
       } else {
-        wrongGuess++
-        topBar.childNodes[2].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
-        quesNum++
-        if (wrongGuess==4){
-          alert ('game over')
-          quesImage.classList.remove("guess3")
-          questionSection.style.objectFit=none
-        } else {
-          quesImage.className=`guess${wrongGuess}`
-          alert('incorrect')
-        }
+        correct = false
+        choice.disabled=true
+        //choice.style.backgroundColor=red
       }
+      results(correct)
     })
   }
+
 };
 
+const results = (correct) => {
+  quesImage = document.querySelector('.image-container img')
+  if (correct==true && wrongGuess<4){
+    alert('correct')
+    quesNum++
+    runGame(quesNum,0)
+  } else {
+    wrongGuess++
+    topBar.childNodes[2].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
+    if (wrongGuess==4){
+      alert ('game over')
+      quesImage.classList.remove("guess3")
+      questionSection.style.objectFit='none'
+      wrongGuess=0
+      runGame(quesNum,wrongGuess)
+      //next question button
+    } else {
+      quesImage.className=`guess${wrongGuess}`
+      alert('incorrect')
+    }
+  }
+}
 
 const runGame = (quesNum,wrongGuess,score) => {
   if (quesNum<6) {
