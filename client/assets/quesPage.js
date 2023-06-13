@@ -30,8 +30,9 @@ const displayQues = async (quesNum) => {
   const data = await fetchData("hard");
   const quesImage = document.createElement("img");
   quesImage.id = "painting"
+  console.log(data)
   let correctAuthor = data[quesNum-1].author
-
+  console.log(data[quesNum-1], data[quesNum-1].author)
   quesImage.src = data[quesNum - 1].imageUrl;
   quesImage.alt = "Q1 picture";
   //quesImage.className='guess0'

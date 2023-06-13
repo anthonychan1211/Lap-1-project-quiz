@@ -44,14 +44,13 @@ app.get("/randomQuestions/hard", (req, res) => {
     
   let randomIDX = null;   
   
-  const hardLvlData = data.filter(obj => {
-    return obj.level === "hard";
-  })
-
+  const hardLvlData = data.filter(obj => obj.level === "hard");
+  
+  console.log(hardLvlData)
   try {
 
     while(questions.length < 10) {
-      randomIDX = Math.floor(Math.random() * data.length); 
+      randomIDX = Math.floor(Math.random() * hardLvlData.length); 
   
       if(questions.some(obj => hardLvlData[randomIDX].name === obj.name) === false){
 
@@ -62,11 +61,10 @@ app.get("/randomQuestions/hard", (req, res) => {
   } catch (error) {
 
     console.log(error);    
-  } 
-  
+  }   
 
   generateRandomAnswers();
-
+  console.log(questions)
   res.send(questions);  
   questions = []
 })
@@ -82,7 +80,7 @@ app.get("/randomQuestions/easy", (req, res) => {
   try {
 
     while(questions.length < 10) {
-      randomIDX = Math.floor(Math.random() * data.length); 
+      randomIDX = Math.floor(Math.random() * easyLvlData.length); 
   
       if(questions.some(obj => easyLvlData[randomIDX].name === obj.name) === false){
 
