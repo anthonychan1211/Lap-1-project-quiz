@@ -38,25 +38,7 @@ app.get("/", (req, res) => {
   res.send(data);
 });
 
-
-//will pick randomly 10 objects for the 10 questions 
-app.get("/randomQuestions/hard", (req, res) => {  
-    
-  let randomIDX = null;   
-  
-  const hardLvlData = data.filter(obj => obj.level === "hard");
-  
-  console.log(hardLvlData)
-  try {
-
-    while(questions.length < 10) {
-      randomIDX = Math.floor(Math.random() * hardLvlData.length); 
-  
-      if(questions.some(obj => hardLvlData[randomIDX].name === obj.name) === false){
-
-        questions.push({...hardLvlData[randomIDX], wrongAuthors: []});                        
-
-//will pick randomly 10 objects for the 10 questions
+//will randomly pick 10 questions and their answers in the hard mode
 app.get("/randomQuestions/hard", (req, res) => {
   let randomIDX = null;
 
@@ -77,7 +59,6 @@ app.get("/randomQuestions/hard", (req, res) => {
     }
   } catch (error) {
 
-
     console.log(error);    
   }   
 
@@ -87,28 +68,15 @@ app.get("/randomQuestions/hard", (req, res) => {
   questions = []
 })
 
-app.get("/randomQuestions/easy", (req, res) => {  
-    
-  let randomIDX = null;  
-
-    console.log(error);
-  }
-
-  generateRandomAnswers();
-  res.send(questions);
-  questions = [];
-});
-
+//will randomly pick 10 questions and their answers in the easy mode
 app.get("/randomQuestions/easy", (req, res) => {
   let randomIDX = null;
-
 
   const easyLvlData = data.filter((obj) => {
     return obj.level === "easy";
   });
 
   try {
-
 
     while(questions.length < 10) {
       randomIDX = Math.floor(Math.random() * easyLvlData.length); 
@@ -117,24 +85,13 @@ app.get("/randomQuestions/easy", (req, res) => {
 
         questions.push({...easyLvlData[randomIDX], wrongAuthors: []});                        
       }                  
+    }   
 
-    while (questions.length < 10) {
-      randomIDX = Math.floor(Math.random() * easyLvlData.length);
-
-      if (
-        questions.some((obj) => easyLvlData[randomIDX].name === obj.name) ===
-        false
-      ) {
-        questions.push({ ...easyLvlData[randomIDX], wrongAuthors: [] });
-      }
-
-    }
   } catch (error) {
     console.log(error);
   }
 
   generateRandomAnswers();
-
   res.send(questions);
   questions = [];
 });

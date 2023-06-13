@@ -1,7 +1,6 @@
 const fetchData = async (difficulty) => {
   const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`);
-  const data = await res.json();
-  console.log(data)
+  const data = await res.json();  
   return data;
 };
 
@@ -26,16 +25,16 @@ const displayTopBar = (quesNum, wrongGuess,score) => {
 };
 
 let data = null;
-let fetchStatus = false
+let fetchStatus = false;
 const displayQues = async (quesNum) => {
   
-  questionSection.textContent=""
-  answerSection.textContent=""  
+  questionSection.textContent="";
+  answerSection.textContent="" ; 
   
 
   if(!fetchStatus) {
     data = await fetchData("hard");
-    fetchStatus = true
+    fetchStatus = true;
   }  
   
   const quesImage = document.createElement("img");
@@ -53,24 +52,25 @@ const displayQues = async (quesNum) => {
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
+    //WHAT IS THIS "CHOICE"?
     choice
     answerSection.appendChild(choice);
     
     choice.addEventListener("click", () => {
       if (choice.textContent == correctAuthor){
-        alert('correct')
-        quesNum++
-        wrongGuess=0
-        painting.style.transform = `scale(${1})`
+        alert('correct');
+        quesNum++;
+        wrongGuess=0;
+        painting.style.transform = `scale(${1})`;
         zoomLevel = 10;        
-        runGame(quesNum,wrongGuess)
+        runGame(quesNum,wrongGuess);
 
       } else {
         wrongGuess++
         topBar.childNodes[2].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`        
 
         if (wrongGuess==4){
-          alert ('Out of tries')
+          alert ('Out of tries');
           // quesImage.classList.remove("guess3")
           // questionSection.style.objectFit=none
           zoomLevel = 10;
@@ -79,7 +79,7 @@ const displayQues = async (quesNum) => {
         } else {
           zoomOut();
           // quesImage.className=`guess${wrongGuess}`
-          alert('incorrect')
+          alert('incorrect');
         }
       }
     })
@@ -87,17 +87,14 @@ const displayQues = async (quesNum) => {
 };
 
 //need to fix the run game count
-const runGame = (quesNum,wrongGuess,score) => {
-
-  
-  
+const runGame = (quesNum,wrongGuess,score) => {  
   
   if (quesNum<6) {
     displayTopBar(quesNum, wrongGuess,score);
-    displayQues(quesNum)
-  } else {
-    //cant finish the game, you need to go to next question
-    alert ('you finished the game')
+    displayQues(quesNum);
+
+  } else {    
+    alert ('you finished the game');
     fetchStatus = false;
   }
 }
@@ -105,7 +102,7 @@ const runGame = (quesNum,wrongGuess,score) => {
 const zoomOut = () => {
   
   const painting = document.getElementById("painting");
-  zoomLevel -= 2;
+  zoomLevel -= (40/100) * zoomLevel;
   painting.style.transform = `scale(${zoomLevel})`
 
 }
@@ -114,11 +111,10 @@ const zoomOut = () => {
 const topBar = document.querySelector(".topBar");
 const questionSection = document.querySelector(".image-container");
 const answerSection = document.querySelector(".answers");
-
 let zoomLevel = 10;
 let quesNum = 1;
 let wrongGuess = 0;
-let score = 0
+let score = 0;
 
 
-runGame(quesNum,wrongGuess,score)
+runGame(quesNum,wrongGuess,score);
