@@ -26,18 +26,13 @@ const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.appendChild(chancesLeft);
 }
 
-let data = null;
-let fetchStatus = false
-
-let data = null;
-let fetchStatus = false;
 const displayQues = async (quesNum) => {
   questionSection.textContent=""
   answerSection.textContent=""
   resultsSection.textContent=""
 
   if (!fetchStatus){
-    data = await fetchData("hard")
+    data = await fetchData("easy")
     fetchStatus = true
   }
 
@@ -61,6 +56,7 @@ const displayQues = async (quesNum) => {
       let correct = false
       if (choice.textContent==correctAuthor){
         correct = true
+        score += (5-wrongGuess)
       } else {
         correct = false
         choice.disabled=true
@@ -75,22 +71,19 @@ const checkAnswer = (correct) => {
   resultsSection.textContent=""
   quesImage = document.querySelector('.image-container img')
   if (correct==true && wrongGuess<5){
-    // alert('correct')
     zoomLevel = 10
-    quesNum++
     results('correct')
+    quesNum++
     painting.style.transform = `scale(${1})`
   } else {
     wrongGuess++
-    topBar.childNodes[2].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
+    topBar.childNodes[3].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
-      // alert ('game over')
       painting.style.transform = `scale(${1})`
       wrongGuess=0
       results('fail')
     } else {
-     zoomOut()
-      // alert('incorrect')
+      zoomOut()
       results('incorrect')
     }
   }
@@ -100,13 +93,14 @@ const results = (result) => {
   console.log(wrongGuess)
   const resultsText = document.createElement('p')
   if (result=='correct'){
-    resultsText.textContent="Correct!"
+    resultsText.textContent=`Correct! You scored ${5-wrongGuess} points.`
     resultsSection.appendChild(resultsText)
+    wrongGuess = 0
     if (quesNum<5){
       nextQues()
     }
   } else if (result=='incorrect'){
-    resultsText.textContent=`Incorrect! You have ${4-wrongGuess} chance${((4-wrongGuess)==1?``: `s`)} left`
+    resultsText.textContent=`Incorrect! You have ${4-wrongGuess} chance${((4-wrongGuess)==1?``: `s`)} left.`
     resultsSection.appendChild(resultsText)
   } else if (result=='fail'){      
       resultsText.textContent="Incorrect! You have no chances left."
@@ -115,16 +109,11 @@ const results = (result) => {
       nextQues()
     }
   } 
-  if (quesNum==5) {
+  if (quesNum==5 && (result=='correct' || result =='fail')) {
     answerSection.childNodes.forEach(button => button.disabled=true)
+    displayTopBar(quesNum, wrongGuess,score)
     finishGame()
   }
-}
-
-const zoomOut = () => {
-  const painting = document.getElementById("painting");
-  zoomLevel -= 2;
-  painting.style.transform = `scale(${zoomLevel})`
 }
 
 const nextQues = () => {
@@ -137,7 +126,10 @@ const nextQues = () => {
 }
 
 const finishGame = () => {
-  alert ('you finished the game')
+  const resultsText = resultsSection.childNodes[0]
+  resultsText.textContent=`You have completed the game! Your final score is ${score} points.`
+  const playAgain = document.createElement('button')
+  resultsSection.appendChild(playAgain)
 }
 
 const runGame = (quesNum,wrongGuess,score) => {
@@ -151,13 +143,11 @@ const runGame = (quesNum,wrongGuess,score) => {
 }
 
 const zoomOut = () => {
-  
   const painting = document.getElementById("painting");
   zoomLevel -= (40/100) * zoomLevel;
   painting.style.transform = `scale(${zoomLevel})`
 
 }
-
 
 const topBar = document.querySelector(".topBar");
 const questionSection = document.querySelector(".image-container");
@@ -169,5 +159,7 @@ let quesNum = 1;
 let wrongGuess = 0;
 let score = 0;
 
+let data = null;
+let fetchStatus = false;
 
 runGame(quesNum,wrongGuess,score);
