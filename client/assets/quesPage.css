@@ -36,17 +36,12 @@ body {
   translate: -50% -50%;
   object-fit: contain;
 }
-.guess0 {
+#painting {
+  object-fit: contain;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
   transform: scale(10);
-}
-.guess1{
-  transform: scale(7);
-}
-.guess2{
-  transform: scale(4);
-}
-.guess3{
-  transform: scale(2);
 }
 button {
   padding: 5px;
