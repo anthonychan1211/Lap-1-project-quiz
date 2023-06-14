@@ -7,6 +7,12 @@ const fetchData = async (difficulty) => {
 
 const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.textContent=""
+
+  const homeLink = document.createElement("a");
+  homeLink.textContent = "Home"
+  homeLink.href = "client/Homepage/homePage.html"
+  topBar.appendChild(homeLink)
+
   const quesProgress = document.createElement("p");
   quesProgress.textContent = `Q${quesNum}/5`;
   topBar.appendChild(quesProgress);
@@ -24,6 +30,8 @@ const displayTopBar = (quesNum,wrongGuess,score) => {
     4 - wrongGuess
   )}`;
   topBar.appendChild(chancesLeft);
+
+  
 }
 
 const displayQues = async (quesNum) => {
