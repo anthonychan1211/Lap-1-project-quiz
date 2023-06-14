@@ -87,11 +87,14 @@ const checkAnswer = (correct,correctAuthor) => {
     zoomLevel = 10
     results('correct',correctAuthor)
     quesNum++
+    painting.style.translate = "-50% -50%";
     painting.style.transform = `scale(${1})`
   } else {
     //wrongGuess++
     topBar.childNodes[3].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
+      zoomLevel=10
+      painting.style.translate = "-50% -50%";
       painting.style.transform = `scale(${1})`
       wrongGuess=0
       if (quesNum<5){
