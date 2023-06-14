@@ -46,6 +46,8 @@ const displayQues = async (quesNum) => {
   quesImage.alt = `Q${quesNum} painting`;
   questionSection.appendChild(quesImage);
 
+  let randomPixal = randomSpotImg();
+
   let randomizeChoices = data[quesNum - 1].wrongAuthors;
   let randomNum = Math.floor(Math.random() * 5);
   randomizeChoices.splice(randomNum, 0, correctAuthor);
@@ -63,6 +65,12 @@ const displayQues = async (quesNum) => {
         topBar.childNodes[1].textContent=`Score: ${score}`
         choice.style.backgroundColor = 'green' 
       } else {
+        let newX;
+        let newY;
+        wrongGuess++
+        randomPixal[0] > 50 ? (newX = randomPixal[0] - 50 + ((randomPixal[0] - 50) / 4) * wrongGuess) : (newX = randomPixal + ((50 - randomPixal[0]) / 4) * wrongGuess);
+        randomPixal[1] > 50 ? (newY = randomPixal[1] - 50) : (newY = 50 - randomPixal[1]);
+        quesImage.style.translate = `-${newX}% -${newY}%`
         correct = false
         choice.disabled=true
       }
@@ -79,13 +87,19 @@ const checkAnswer = (correct,correctAuthor) => {
     zoomLevel = 10
     results('correct',correctAuthor)
     quesNum++
+    painting.style.translate = "-50% -50%";
     painting.style.transform = `scale(${1})`
   } else {
-    wrongGuess++
+    //wrongGuess++
     topBar.childNodes[3].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
+      zoomLevel=10
+      painting.style.translate = "-50% -50%";
       painting.style.transform = `scale(${1})`
       wrongGuess=0
+      if (quesNum<5){
+        quesNum++
+      }
       results('fail',correctAuthor)
     } else {
       zoomOut()
@@ -95,7 +109,6 @@ const checkAnswer = (correct,correctAuthor) => {
 }
 
 const results = (result,correctAuthor) => {
-  console.log(wrongGuess)
   const resultsText = document.createElement('p')
   if (result=='correct'){
     resultsText.textContent=`Correct! You scored ${5-wrongGuess} points.`
@@ -110,16 +123,16 @@ const results = (result,correctAuthor) => {
   } else if (result=='fail'){      
       resultsText.textContent="Incorrect! You have no chances left."
       resultsSection.appendChild(resultsText)
-      
-    if (quesNum<5){
+      if (quesNum<5){
+
       nextQues(correctAuthor)
-    }
+      }
   } 
-  if (quesNum==5 && (result=='correct' || result =='fail')) {
+  console.log(quesNum)
+  if (quesNum==5 && (result=='correct' || result =='fail')){
     answerSection.childNodes.forEach(button => {
       button.disabled=true      
       if (button.textContent==correctAuthor){
-        console.log('correct')
         button.style.backgroundColor='green'
       }
     })
@@ -137,7 +150,6 @@ const nextQues = (correctAuthor) => {
   answerSection.childNodes.forEach(button => {
     button.disabled=true
     if (button.textContent==correctAuthor){
-      console.log('correct')
       button.style.backgroundColor='green'
     }
   })
@@ -160,6 +172,14 @@ const runGame = (quesNum,wrongGuess,score) => {
   }
 }
 
+const randomSpotImg = () => {
+  const painting = document.getElementById("painting");
+  const randomX = Math.floor(Math.random() * 100);
+  const randomY = Math.floor(Math.random() * 100);
+  painting.style.translate = `-${randomX}% -${randomY}%`;
+  return [randomX, randomY];
+};
+
 const zoomOut = () => {
   const painting = document.getElementById("painting");
   zoomLevel -= (40/100) * zoomLevel;
@@ -176,8 +196,6 @@ let zoomLevel =10
 let quesNum = 1;
 let wrongGuess = 0;
 let score = 0;
-
-
 
 let data = null;
 let fetchStatus = false;
