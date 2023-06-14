@@ -86,6 +86,7 @@ const checkAnswer = (correct,correctAuthor) => {
     if (wrongGuess==4){
       painting.style.transform = `scale(${1})`
       wrongGuess=0
+      quesNum++
       results('fail',correctAuthor)
     } else {
       zoomOut()
@@ -95,7 +96,6 @@ const checkAnswer = (correct,correctAuthor) => {
 }
 
 const results = (result,correctAuthor) => {
-  console.log(wrongGuess)
   const resultsText = document.createElement('p')
   if (result=='correct'){
     resultsText.textContent=`Correct! You scored ${5-wrongGuess} points.`
@@ -110,16 +110,16 @@ const results = (result,correctAuthor) => {
   } else if (result=='fail'){      
       resultsText.textContent="Incorrect! You have no chances left."
       resultsSection.appendChild(resultsText)
-      
-    if (quesNum<5){
+      if (quesNum<5){
+
       nextQues(correctAuthor)
-    }
+      }
   } 
-  if (quesNum==5 && (result=='correct' || result =='fail')) {
+  console.log(quesNum)
+  if (quesNum>5 && (result=='correct' || result =='fail')){
     answerSection.childNodes.forEach(button => {
       button.disabled=true      
       if (button.textContent==correctAuthor){
-        console.log('correct')
         button.style.backgroundColor='green'
       }
     })
@@ -137,7 +137,6 @@ const nextQues = (correctAuthor) => {
   answerSection.childNodes.forEach(button => {
     button.disabled=true
     if (button.textContent==correctAuthor){
-      console.log('correct')
       button.style.backgroundColor='green'
     }
   })
