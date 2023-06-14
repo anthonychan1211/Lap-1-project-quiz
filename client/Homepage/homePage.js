@@ -1,11 +1,13 @@
 const easyButton = () =>{
     const start = document.querySelector("#easy")
     start.addEventListener('click', () => {
-        
+
         localStorage.setItem("difficulty","easy")
+
         window.open("../QuestionPage/quesPage.html","_self")
     })
 }
+
 
 const hardButton = () =>{
     const start = document.querySelector("#hard")
@@ -19,4 +21,6 @@ const hardButton = () =>{
 
 easyButton()
 hardButton()
+
+
 

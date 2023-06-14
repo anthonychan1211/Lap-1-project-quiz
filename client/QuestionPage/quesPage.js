@@ -60,23 +60,24 @@ const displayQues = async (quesNum) => {
       if (choice.textContent==correctAuthor){
         correct = true        
         score += (5-wrongGuess)
+        topBar.childNodes[1].textContent=`Score: ${score}`
         choice.style.backgroundColor = 'green' 
       } else {
         correct = false
         choice.disabled=true
       }
-      checkAnswer(correct)
+      checkAnswer(correct,correctAuthor)
     })
   }
 
 };
 
-const checkAnswer = (correct) => {
+const checkAnswer = (correct,correctAuthor) => {
   resultsSection.textContent=""
   quesImage = document.querySelector('.image-container img')
   if (correct==true && wrongGuess<5){
     zoomLevel = 10
-    results('correct')
+    results('correct',correctAuthor)
     quesNum++
     painting.style.transform = `scale(${1})`
   } else {
@@ -85,15 +86,15 @@ const checkAnswer = (correct) => {
     if (wrongGuess==4){
       painting.style.transform = `scale(${1})`
       wrongGuess=0
-      results('fail')
+      results('fail',correctAuthor)
     } else {
       zoomOut()
-      results('incorrect')
+      results('incorrect',correctAuthor)
     }
   }
 }
 
-const results = (result) => {
+const results = (result,correctAuthor) => {
   console.log(wrongGuess)
   const resultsText = document.createElement('p')
   if (result=='correct'){
@@ -101,7 +102,7 @@ const results = (result) => {
     resultsSection.appendChild(resultsText)
     wrongGuess = 0
     if (quesNum<5){
-      nextQues()
+      nextQues(correctAuthor)
     }
   } else if (result=='incorrect'){
     resultsText.textContent=`Incorrect! You have ${4-wrongGuess} chance${((4-wrongGuess)==1?``: `s`)} left.`
@@ -109,24 +110,37 @@ const results = (result) => {
   } else if (result=='fail'){      
       resultsText.textContent="Incorrect! You have no chances left."
       resultsSection.appendChild(resultsText)
+      
     if (quesNum<5){
-      nextQues()
+      nextQues(correctAuthor)
     }
   } 
   if (quesNum==5 && (result=='correct' || result =='fail')) {
-    answerSection.childNodes.forEach(button => button.disabled=true)
+    answerSection.childNodes.forEach(button => {
+      button.disabled=true      
+      if (button.textContent==correctAuthor){
+        console.log('correct')
+        button.style.backgroundColor='green'
+      }
+    })
     displayTopBar(quesNum, wrongGuess,score)
     finishGame()
   }
 }
 
-const nextQues = () => {
+const nextQues = (correctAuthor) => {
   const nextQButton = document.createElement('button')
   nextQButton.textContent = "Next question"
   resultsSection.appendChild(nextQButton)
   nextQButton.addEventListener('click', () => {
   runGame(quesNum,0,score)})
-  answerSection.childNodes.forEach(button => button.disabled=true)
+  answerSection.childNodes.forEach(button => {
+    button.disabled=true
+    if (button.textContent==correctAuthor){
+      console.log('correct')
+      button.style.backgroundColor='green'
+    }
+  })
 }
 
 const finishGame = () => {
