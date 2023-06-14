@@ -38,8 +38,8 @@ const displayTopBar = (quesNum,wrongGuess,score) => {
 const displayQues = async (quesNum) => {
   questionSection.textContent=""
   answerSection.textContent=""
-  resultsSection.textContent=""
-
+  resultsSection.textContent=""  
+  
   if (!fetchStatus){
     data = await fetchData(difficulty)
     fetchStatus = true
@@ -62,6 +62,7 @@ const displayQues = async (quesNum) => {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
     answerSection.appendChild(choice);
+    console.log(choice)    
 
     choice.addEventListener('click', () => {
       let correct = false
@@ -134,7 +135,7 @@ const results = (result,correctAuthor) => {
       nextQues(correctAuthor)
       }
   } 
-  console.log(quesNum)
+  
   if (quesNum==5 && (result=='correct' || result =='fail')){
     answerSection.childNodes.forEach(button => {
       button.disabled=true      
@@ -221,13 +222,12 @@ const restartGame = (mode) => {
   score = 0;
   fetchStatus = false;
   difficulty = mode;
-  answerSection.textContent=""
+  const buttons = answerSection.querySelectorAll("button") ;
 
-  //removes all answers that were there before
-  answerSection.childNodes.forEach(node=> {
-    answerSection.removeChild(node) }
-  )
-
+  buttons.forEach(button => {
+    answerSection.removeChild(button);
+  });
+ 
   console.log("test")
   runGame(quesNum,wrongGuess,score);
 }
