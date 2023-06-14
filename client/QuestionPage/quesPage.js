@@ -154,7 +154,10 @@ const finishGame = () => {
   resultsText.textContent=`You have completed the game! Your final score is ${score} points.`
   const playEasyMode = document.createElement('button')
   const playHardMode = document.createElement('button')
-  resultsSection.appendChild(playAgain)
+  playEasyMode.textContent = "Play again: Easy Mode"
+  playHardMode.textContent = "Play again: Hard Mode"
+  resultsSection.appendChild(playEasyMode)
+  resultsSection.appendChild(playHardMode)
 }
 
 const runGame = (quesNum,wrongGuess,score) => {
