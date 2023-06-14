@@ -45,7 +45,7 @@ const displayQues = async (quesNum) => {
   if (!fetchStatus){
     data = await fetchData(difficulty)
     fetchStatus = true
-    console.log(data)
+    
   }
 
   const quesImage = document.createElement("img");
@@ -132,6 +132,7 @@ const results = (result,correctAuthor) => {
     resultsSection.appendChild(resultsText)
   } else if (result=='fail'){      
       resultsText.textContent="Incorrect! You have no chances left."
+      showDescription()
       resultsSection.appendChild(resultsText)
       if (quesNum<5){
 
@@ -156,8 +157,12 @@ const nextQues = (correctAuthor) => {
   const nextQButton = document.createElement('button')
   nextQButton.textContent = "Next question"
   resultsSection.appendChild(nextQButton)
+  
   nextQButton.addEventListener('click', () => {
-  runGame(quesNum,0,score)})
+  descriptionSection.querySelector("p").textContent = "";  
+  runGame(quesNum,0,score)
+})
+
   answerSection.childNodes.forEach(button => {
     button.disabled=true
     if (button.textContent==correctAuthor){
@@ -219,22 +224,24 @@ const zoomOut = () => {
 }
 
 const showDescription = () => {
-  const descriptionSection = document.querySelector(".description")
-  const description = document.createElement("p");
-  const image = document.querySelector("#painting");
-  const imageUrl = image.src;
-  let correctObj = data.filter(obj => obj.imageUrl === imageUrl);
-  console.log(correctObj)
 
-  description.textContent = correctObj.description; 
-  descriptionSection.appendChild(description);
+  const paragraphElement = descriptionSection.querySelector('p');
+  const image = document.querySelector("#painting");
+  const imageUrl = image.src;  
+  const correctObj = data.filter(obj => obj.imageUrl === imageUrl);
+  const description = correctObj["0"].description;
+
+  paragraphElement.textContent = description    
+  
+  console.log(paragraphElement.textContent)
 
 }
 
 const topBar = document.querySelector(".topBar");
 const questionSection = document.querySelector(".image-container");
 const answerSection = document.querySelector(".answers");
-const resultsSection = document.querySelector(".results")
+const resultsSection = document.querySelector(".results");
+const descriptionSection = document.querySelector(".description");
 
 let zoomLevel =10
 let quesNum = 1;
