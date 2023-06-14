@@ -33,6 +33,8 @@ const displayTopBar = (quesNum,wrongGuess,score) => {
     4 - wrongGuess
   )}`;
   topBar.appendChild(chancesLeft);
+
+  
 }
 
 const displayQues = async (quesNum) => {
@@ -43,6 +45,7 @@ const displayQues = async (quesNum) => {
   if (!fetchStatus){
     data = await fetchData(difficulty)
     fetchStatus = true
+    console.log(data)
   }
 
   const quesImage = document.createElement("img");
@@ -61,8 +64,7 @@ const displayQues = async (quesNum) => {
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
-    answerSection.appendChild(choice);
-    console.log(choice)    
+    answerSection.appendChild(choice);    
 
     choice.addEventListener('click', () => {
       let correct = false
@@ -120,6 +122,7 @@ const results = (result,correctAuthor) => {
   if (result=='correct'){
     resultsText.textContent=`Correct! You scored ${5-wrongGuess} points.`
     resultsSection.appendChild(resultsText)
+    showDescription();
     wrongGuess = 0
     if (quesNum<5){
       nextQues(correctAuthor)
@@ -141,6 +144,7 @@ const results = (result,correctAuthor) => {
       button.disabled=true      
       if (button.textContent==correctAuthor){
         button.style.backgroundColor='green'
+        showDescription();
       }
     })
     displayTopBar(quesNum, wrongGuess,score)
@@ -211,6 +215,19 @@ const zoomOut = () => {
   const painting = document.getElementById("painting");
   zoomLevel -= (40/100) * zoomLevel;
   painting.style.transform = `scale(${zoomLevel})`
+
+}
+
+const showDescription = () => {
+  const descriptionSection = document.querySelector(".description")
+  const description = document.createElement("p");
+  const image = document.querySelector("#painting");
+  const imageUrl = image.src;
+  let correctObj = data.filter(obj => obj.imageUrl === imageUrl);
+  console.log(correctObj)
+
+  description.textContent = correctObj.description; 
+  descriptionSection.appendChild(description);
 
 }
 
