@@ -63,7 +63,7 @@ app.get("/randomQuestions/hard", (req, res) => {
   }   
 
   generateRandomAnswers();
-  console.log(questions)
+  //console.log(questions)
   res.send(questions);  
   questions = []
 })
