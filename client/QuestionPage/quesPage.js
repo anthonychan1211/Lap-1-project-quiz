@@ -10,6 +10,12 @@ const fetchData = async (difficulty) => {
 
 const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.textContent=""
+
+  const homePage = document.createElement("a");
+  homePage.textContent = "Home";
+  homePage.href = "../Homepage/homePage.html"
+  topBar.appendChild(homePage);
+
   const quesProgress = document.createElement("p");
   quesProgress.textContent = `Q${quesNum}/5`;
   topBar.appendChild(quesProgress);
@@ -146,7 +152,8 @@ const nextQues = (correctAuthor) => {
 const finishGame = () => {
   const resultsText = resultsSection.childNodes[0]
   resultsText.textContent=`You have completed the game! Your final score is ${score} points.`
-  const playAgain = document.createElement('button')
+  const playEasyMode = document.createElement('button')
+  const playHardMode = document.createElement('button')
   resultsSection.appendChild(playAgain)
 }
 
