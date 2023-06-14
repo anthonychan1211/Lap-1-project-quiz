@@ -197,8 +197,6 @@ let quesNum = 1;
 let wrongGuess = 0;
 let score = 0;
 
-
-
 let data = null;
 let fetchStatus = false;
 
