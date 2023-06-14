@@ -46,6 +46,8 @@ const displayQues = async (quesNum) => {
   quesImage.alt = `Q${quesNum} painting`;
   questionSection.appendChild(quesImage);
 
+  let randomPixal = randomSpotImg();
+
   let randomizeChoices = data[quesNum - 1].wrongAuthors;
   let randomNum = Math.floor(Math.random() * 5);
   randomizeChoices.splice(randomNum, 0, correctAuthor);
@@ -63,6 +65,12 @@ const displayQues = async (quesNum) => {
         topBar.childNodes[1].textContent=`Score: ${score}`
         choice.style.backgroundColor = 'green' 
       } else {
+        let newX;
+        let newY;
+        wrongGuess++
+        randomPixal[0] > 50 ? (newX = randomPixal[0] - 50 + ((randomPixal[0] - 50) / 4) * wrongGuess) : (newX = randomPixal + ((50 - randomPixal[0]) / 4) * wrongGuess);
+        randomPixal[1] > 50 ? (newY = randomPixal[1] - 50) : (newY = 50 - randomPixal[1]);
+        quesImage.style.translate = `-${newX}% -${newY}%`
         correct = false
         choice.disabled=true
       }
@@ -81,12 +89,14 @@ const checkAnswer = (correct,correctAuthor) => {
     quesNum++
     painting.style.transform = `scale(${1})`
   } else {
-    wrongGuess++
+    //wrongGuess++
     topBar.childNodes[3].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
       painting.style.transform = `scale(${1})`
       wrongGuess=0
-      quesNum++
+      if (quesNum<5){
+        quesNum++
+      }
       results('fail',correctAuthor)
     } else {
       zoomOut()
@@ -116,7 +126,7 @@ const results = (result,correctAuthor) => {
       }
   } 
   console.log(quesNum)
-  if (quesNum>5 && (result=='correct' || result =='fail')){
+  if (quesNum==5 && (result=='correct' || result =='fail')){
     answerSection.childNodes.forEach(button => {
       button.disabled=true      
       if (button.textContent==correctAuthor){
@@ -158,6 +168,14 @@ const runGame = (quesNum,wrongGuess,score) => {
     fetchStatus = false
   }
 }
+
+const randomSpotImg = () => {
+  const painting = document.getElementById("painting");
+  const randomX = Math.floor(Math.random() * 100);
+  const randomY = Math.floor(Math.random() * 100);
+  painting.style.translate = `-${randomX}% -${randomY}%`;
+  return [randomX, randomY];
+};
 
 const zoomOut = () => {
   const painting = document.getElementById("painting");
