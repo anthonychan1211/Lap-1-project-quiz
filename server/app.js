@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(logger);
 
 let questions = [];
-//will randomly generate 4 multiple choice wrong answers inside obj.wrongAuthors. Need to generate the question first
+//will randomly generate 4 multiple choice wrong answers inside obj.wrongAuthors. 
 const generateRandomAnswers = () => {
   let randomIDX = null;
 
