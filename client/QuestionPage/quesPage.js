@@ -173,9 +173,19 @@ const finishGame = () => {
   resultsSection.appendChild(playEasyMode)
   resultsSection.appendChild(playHardMode)
 
-  playEasyMode.addEventListener("click",() => restartGame("easy"));
-  playEasyMode.addEventListener("click", () => restartGame("hard"));
-  //runGame(quesNum,wrongGuess,score)
+  playEasyMode.addEventListener("click",() => {
+
+    fetchStatus = false;     
+    difficulty = "easy"
+    runGame(1,0,0)    
+  });
+
+  playHardMode.addEventListener("click", () => {
+
+    fetchStatus = false;      
+    difficulty = "hard"
+    runGame(1,0,0)
+  });  
 }
 
 const runGame = (quesNum,wrongGuess,score) => {
@@ -216,20 +226,21 @@ let score = 0;
 let data = null;
 let fetchStatus = false;
 
-const restartGame = (mode) => {
-  quesNum = 1;
-  wrongGuess = 0;
-  score = 0;
-  fetchStatus = false;
-  difficulty = mode;
-  const buttons = answerSection.querySelectorAll("button") ;
+// const restartGame = (mode) => {
+  console.log(fetchStatus, quesNum, wrongGuess)
+//   quesNum = 1;
+//   wrongGuess = 0;
+//   score = 0;
+//   fetchStatus = false;
+//   difficulty = mode;
+//   const buttons = answerSection.querySelectorAll("button") ;
 
-  buttons.forEach(button => {
-    answerSection.removeChild(button);
-  });
+//   buttons.forEach(button => {
+//     answerSection.removeChild(button);
+//   });
  
-  console.log("test")
-  runGame(quesNum,wrongGuess,score);
-}
+//   console.log("test")
+//   runGame(quesNum,wrongGuess,score);
+// }
 
 runGame(quesNum,wrongGuess,score);
