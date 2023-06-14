@@ -43,15 +43,14 @@ const displayQues = async (quesNum) => {
   quesImage.id = "painting";
   quesImage.src = data[quesNum - 1].imageUrl;
   quesImage.alt = "Q1 picture";
-
   questionSection.appendChild(quesImage);
 
   let randomizeChoices = data[quesNum - 1].wrongAuthors;
   let randomNum = Math.floor(Math.random() * 5);
   randomizeChoices.splice(randomNum, 0, correctAuthor);
-  randomSpotImg();
+  let randomPixal = randomSpotImg();
   console.log(data[quesNum - 1].name);
-
+  console.log(randomPixal);
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
@@ -64,31 +63,40 @@ const displayQues = async (quesNum) => {
         wrongGuess = 0;
         painting.style.transform = `scale(${1})`;
         zoomLevel = 10;
-        runGame(quesNum, wrongGuess);
+
+        setTimeout(() => {
+          runGame(quesNum, wrongGuess);
+        }, 1000);
       } else {
         wrongGuess++;
+        let newX;
+        let newY;
+        randomPixal[0] > 50
+          ? (newX =
+              randomPixal[0] - 50 + ((randomPixal[0] - 50) / 4) * wrongGuess)
+          : (newX = randomPixal + ((50 - randomPixal[0]) / 4) * wrongGuess);
+        randomPixal[1] > 50
+          ? (newY = randomPixal[1] - 50)
+          : (newY = 50 - randomPixal[1]);
+
+        quesImage.style.translate = `-${newX}% -${newY}%`;
         topBar.childNodes[2].textContent = `${"x ".repeat(
           wrongGuess
         )}${"o ".repeat(4 - wrongGuess)}`;
 
         if (wrongGuess == 4) {
           alert("Out of tries");
-          // quesImage.classList.remove("guess3")
-          // questionSection.style.objectFit=none
           zoomLevel = 10;
+          painting.style.translate = "-50% -50%";
           painting.style.transform = `scale(${1})`;
         } else {
           zoomOut();
-          // quesImage.className=`guess${wrongGuess}`
           alert("incorrect");
         }
       }
     });
   }
 };
-fetchData("hard").then((data) => {
-  console.log(data);
-});
 
 const runGame = (quesNum, wrongGuess, score) => {
   if (quesNum < 6) {
@@ -102,21 +110,10 @@ const runGame = (quesNum, wrongGuess, score) => {
 
 const randomSpotImg = () => {
   const painting = document.getElementById("painting");
-  const imageWidth = painting.offsetWidth;
-  const imageHeight = painting.offsetHeight;
-  let randomX = Math.floor(Math.random() * imageWidth);
-  let randomY = Math.floor(Math.random() * imageHeight);
-
-  //CAN SOMEONE FIX THE IMAGE POSITION PROBLEM??
-  if (randomX < 100) {
-    randomX += 200;
-  }
-  if (randomY < 100) {
-    randomX += 200;
-  }
-
-  painting.style.transformOrigin = `${randomX}px ${randomY}px`;
-  console.log(imageHeight, imageWidth, randomX, randomY);
+  const randomX = Math.floor(Math.random() * 100);
+  const randomY = Math.floor(Math.random() * 100);
+  painting.style.translate = `-${randomX}% -${randomY}%`;
+  return [randomX, randomY];
 };
 
 const zoomOut = () => {

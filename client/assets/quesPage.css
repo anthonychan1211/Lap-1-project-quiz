@@ -36,7 +36,7 @@ body {
   translate: -50% -50%;
   object-fit: contain;
 }
-#painting { 
+#painting {
   object-fit: contain;
   transition-property: transform;
   transition-duration: 0.5s;
