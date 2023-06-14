@@ -32,7 +32,7 @@ const displayQues = async (quesNum) => {
   resultsSection.textContent=""
 
   if (!fetchStatus){
-    data = await fetchData("easy")
+    data = await fetchData(difficulty)
     fetchStatus = true
   }
 
@@ -158,6 +158,8 @@ let zoomLevel =10
 let quesNum = 1;
 let wrongGuess = 0;
 let score = 0;
+
+let difficulty = 'easy'
 
 let data = null;
 let fetchStatus = false;
