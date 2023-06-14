@@ -73,7 +73,7 @@
   
 }
 
-#play {
+#easy {
   
 display: flex;
 color: rgb(0, 0, 0);
@@ -90,7 +90,7 @@ justify-content: center;
 align-items: center;
 }
 
-/* #Hard {
+#Hard {
 
 display: flex;
 color: rgb(0, 0, 0);
@@ -105,7 +105,7 @@ margin: 10px;
 outline: none;
 justify-content: center;
 align-items: center;
-} */
+}
 
 
 body{
