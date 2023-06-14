@@ -4,138 +4,158 @@
     "name": "Mona Lisa",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1374px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "The Mona Lisa is a world-renowned painting created by Leonardo da Vinci during the Renaissance period. This masterpiece, also known as La Gioconda, is a captivating portrait that continues to intrigue audiences centuries later. The painting depicts a woman, believed to be Lisa Gherardini, with an enigmatic smile and captivating eyes that seem to follow viewers. Leonardo's exceptional skill in capturing intricate details and subtle nuances is evident in the painting. The composition features a harmonious blend of light and shadow, while the background showcases a serene landscape. The use of sfumato, a technique involving subtle blending of colors and tones, adds a sense of depth and realism to the artwork. The Mona Lisa's fame extends beyond its technical excellence. Its mysterious smile and the sense of intrigue surrounding the subject's identity have sparked countless debates and interpretations. This iconic painting continues to captivate art enthusiasts, serving as a symbol of artistic mastery and an enduring testament to Leonardo da Vinci's genius."
   },
   {
     "author": "Vincent van Gogh",
     "name": "The Starry Night",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/2560px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "The Starry Night by Vincent van Gogh is a masterpiece that has left an indelible mark on the art world. Painted during the post-impressionist period, this iconic artwork depicts a swirling night sky above a small village with a towering cypress tree. Van Gogh's use of bold, expressive brushstrokes and vibrant colors evokes a sense of movement and emotional intensity. The painting showcases van Gogh's unique vision and his deep connection with nature. The luminous stars, the moon, and the swirling clouds convey a sense of cosmic energy and tranquility. The contrasting elements of light and darkness create a mesmerizing composition that draws viewers into an otherworldly realm. The Starry Night has become a symbol of artistic passion and emotional expression. It resonates with viewers of all ages, inspiring contemplation and sparking conversations about the power of art to convey inner emotions and transcend reality. Van Gogh's masterpiece continues to be celebrated for its timeless beauty and its ability to stir the imagination."
   },
   {
     "author": "Pablo Picasso",
     "name": "Guernica",
     "imageUrl": "https://static3.museoreinasofia.es/sites/default/files/obras/DE00050_0.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "Guernica by Pablo Picasso is a monumental painting that stands as a powerful symbol of the horrors of war and the human capacity for suffering. Created in response to the bombing of the town of Guernica during the Spanish Civil War, this iconic artwork depicts a chaotic scene of anguish and despair. Picasso's use of monochromatic tones and sharp, fragmented shapes creates a sense of devastation and turmoil. The painting captures the harrowing realities of war, with distorted figures, anguished faces, and symbols of destruction. The bull, the horse, and the wounded soldier all represent the innocent victims caught in the crossfire of conflict. Guernica serves as a poignant reminder of the consequences of violence and a call for peace and compassion. Picasso's masterpiece continues to resonate with viewers, inspiring discussions about the horrors of war and the importance of empathy. Its enduring relevance and emotional impact make Guernica a testament to the power of art as a means of social commentary and a catalyst for change."
   },
   {
     "author": "Michelangelo",
     "name": "The Creation of Adam",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Creaci%C3%B3n_de_Ad%C3%A1n.jpg/2560px-Creaci%C3%B3n_de_Ad%C3%A1n.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "The Creation of Adam is a renowned fresco painting by Michelangelo, situated on the ceiling of the Sistine Chapel in Vatican City. This iconic artwork depicts the biblical scene from the Book of Genesis where God reaches out to touch the hand of Adam, symbolizing the creation of humanity. The painting is celebrated for its breathtaking composition, technical mastery, and profound spiritual significance. Michelangelo's impeccable skill in portraying the human form is evident in the muscular figures of God and Adam. Their outstretched arms convey a sense of divine connection and the potential for life and knowledge. The intricate details, vibrant colors, and the grandeur of the overall composition make The Creation of Adam a true masterpiece. This painting transcends religious boundaries and speaks to the universal themes of creation, human potential, and the relationship between humanity and the divine. It continues to inspire awe and contemplation, inviting viewers to reflect on the mysteries of existence and the profound beauty of artistic expression."
   },
   {
     "author": "Claude Monet",
     "name": "Water Lilies",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/The_Water-Lily_Pond_-_Google_Arts_%26_Culture.jpg/2085px-The_Water-Lily_Pond_-_Google_Arts_%26_Culture.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "Water Lilies by Claude Monet is a series of impressionist paintings that depict his beloved water garden in Giverny, France. These serene and immersive artworks capture the beauty and tranquility of the lily ponds through Monet's signature style of loose brushstrokes and vibrant colors. The Water Lilies series showcases Monet's fascination with capturing the ever-changing play of light and reflections on the water's surface. The lilies themselves become symbols of nature's ephemeral beauty and the passage of time. The absence of clear forms and the emphasis on atmosphere create an ethereal and dreamlike quality. Monet's exploration of color and light in the Water Lilies series broke away from traditional notions of representation, paving the way for modern art. These paintings invite viewers to immerse themselves in a world of nature and contemplation, where the boundaries between water, sky, and flora blur, and the viewer is transported into a serene and introspective state."
   },
   {
     "author": "Salvador Dalí",
     "name": "The Persistence of Memory",
     "imageUrl": "https://pixelz.cc/wp-content/uploads/2018/07/the-persistence-of-memory-painting-by-salvador-dali-uhd-4k-wallpaper.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "The Persistence of Memory by Salvador Dalí is an iconic surrealist painting that has captivated audiences with its dreamlike and thought-provoking imagery. This enigmatic artwork features melting clocks draped over surreal landscapes, with a solitary figure in the foreground. Dalí's use of meticulous detail and precise rendering creates a sense of hyper-realism within a fantastical realm. The painting's melting clocks symbolize the fluidity and subjectivity of time, challenging conventional notions of reality and perception. The barren landscapes and the presence of ants add a sense of decay and the relentless passage of time. The Persistence of Memory invites viewers to contemplate the nature of existence, memory, and the subconscious mind. Dalí's masterpiece has become an enduring symbol of surrealism and continues to spark imagination and philosophical ponderings. It challenges our understanding of the world, inviting us to explore the boundaries of reality and the depths of our own consciousness."
   },
   {
     "author": "Edvard Munch",
     "name": "The Scream",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "The Scream by Edvard Munch is a haunting and deeply expressive painting that has become an iconic symbol of anguish and existential dread. Created during the late 19th century, this masterpiece depicts a figure standing on a bridge, mouth open in a silent scream, while the background swirls with vibrant and distorted colors. Munch's use of bold lines, exaggerated perspectives, and vivid hues intensifies the emotional impact of the artwork. The distorted face and the desolate landscape evoke a sense of overwhelming anxiety and existential turmoil, resonating with viewers on a profound level. The Scream is not just a depiction of personal anguish; it encapsulates the universal human experience of suffering, alienation, and the search for meaning. It serves as a visual representation of the anxieties and uncertainties that accompany existence. Munch's iconic painting continues to provoke introspection and prompts discussions about the complexities of the human condition."
   },
   {
     "author": "Johannes Vermeer",
     "name": "Girl with a Pearl Earring",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
-    "wrongAuthors": []
+    "imageUrl": "https://www.brookpacelascelles.com/product-images/Fullsize/803d5a17-9ea8-4015-afdc-9e6a20308690-1.jpg",
+    "wrongAuthors": [],
+    "level": "easy"
   },
   {
     "author": "Gustav Klimt",
     "name": "The Kiss",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Klimt_-_Der_Kuss.jpeg/2073px-Klimt_-_Der_Kuss.jpeg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "The Kiss is Klimt's most popular work and visitors flock annually to see it in Vienna's Austrian Gallery. At a remarkable 72in x 72in (180cm x 180cm), its powerful presence resounds from the wall as the life-size figures, wrapped in gold, embrace. In 1903, Klimt traveled twice to Ravenna, where he saw the mosaics of San Vitale, whose Byzantine influence was apparent in the paintings of what would become known as his Golden Period. The use of gold harked back to Klimt's own past, to the metal work of his father and younger brother Ernst, who had both died a decade earlier. Klimt's interest in the Byzantine period also symbolized a move towards greater stability, through static, inorganic forms; suggesting a search for refuge after the artist's exploration of the instinctual powers of archaic Greece. The Kiss representing the apex of his Golden Period this concludes similar thematic studies during his career, such as The Beethoven Frieze, and The Tree of Life. Each work aids final comprehension of the allegory, which represents the mystical union of spiritual and erotic love and the merging of the individual with the eternal cosmos."
   },
   {
     "author": "Grant Wood",
     "name": "American Gothic",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
     "wrongAuthors": [],
-    "level": "easy"
+    "level": "easy",
+    "description": "In American Gothic, Grant Wood directly evoked images of an earlier generation by featuring a farmer and his daughter posed stiffly and dressed as if they were, as the artist put it, “tintypes from my old family album.” They stand outside of their home, built in an 1880s style known as Carpenter Gothic. Wood had seen a similar farmhouse during a visit to Eldon, Iowa. When it was exhibited at the Art Institute in 1930, the painting became an instant sensation, its ambiguity prompting viewers to speculate about the figures and their story. Many understood the work to be a satirical comment on midwesterners out of step with a modernizing world. Yet Wood intended it to convey a positive image of rural American values, offering a vision of reassurance at the beginning of the Great Depression."
   },
   {
     "author": "Vincent van Gogh",
     "name": "The Red Vineyard",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Vincent_van_Gogh_-_Red_Vineyard_at_Arles_%281888%29.jpg/2560px-Vincent_van_Gogh_-_Red_Vineyard_at_Arles_%281888%29.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "The Red Vineyard at Arles, which Vincent van Gogh was unusually pleased with, is the only work he sold during his lifetime, and was bought for 400 francs by Anna Boch (1848-1936) In October, 1888 Gauguin arrived in Arles and moved in with Van Gogh, who was beside himself with excitement and dream of starting if not an artists' colony, at the very least a shared studio. Van Gogh had met Gauguin two years previously and was in awe of the slightly older artist, whose own opinion of himself was greatly inflated. The stay ended in disaster culminating in Van Gogh's self-mutilation, but prior to this the two artists had worked on similar projects, and Gauguin's influence can be seen on Van Gogh's paintings of this time. Van Gogh was particularly enraptured with a local vineyard, whose colours were turning to autumnal reds and yellows as the days shortened into autumn. He painted The Red Vineyard, capturing the mellowed tones and glistening light of the early evening sun reflecting in the river, while Gauguin painted Vineyard at Arles with Breton Women, clothing the women in the traditional Breton costume of his home. On October 2, 1888 Vincent van Gogh sends a letter to Eugene Boch mentioning his project to paint The Red Vineyard, in which he mentioned: 'Ah well, I have to go to work in the vineyard, near Mont Majour. It's all purplish yellow green under the blue sky, a beautiful, colour motif.'"
   },
   {
     "author": "Paul Cézanne",
     "name": "The Card Players",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cezanne_The_Card_Players_Metmuseum.jpg/2560px-Cezanne_The_Card_Players_Metmuseum.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "The Card Players is a series of Impressionist paintings by the French modernist Paul Cezanne. One of his most ambitious projects, now seen as an important contribution to modern art, it occupied him for several years. Please note that the term 'Impressionist' is used here in a general sense, to describe a loose, almost unfinished style of painting, rather than Monet's spontaneous type of plein-air art. For more, see: Characteristics of Impressionism (1870-1930). Although painted during Cezanne's final period, they represent some of the greatest genre paintings of the French School. There are five versions in the series, each varying in content and size: one is in a private collection, the others are in the Musee d'Orsay, the Courtauld Gallery, the Barnes Foundation, and the Metropolitan Museum of Art. The privately held version was bought in 2011 by the Royal Family of Qatar for a sum estimated to be between $250 million and $300 million. Cezanne also executed a number of preparatory oils and drawings for the series, including: Study for The Card Players 1890–92, Rhode Island School of Design Museum); Man with a Pipe (study for The Card Players) (1890-2, Nelson-Atkins Museum of Art, Kansas City); Study for The Card Players 1890-2, Worcester Art Museum, MA); and Man in a Blue Smock (1891-97, Kimbell Art Museum, Fort Worth, Texas). Cezanne is famous for his still life painting, and art historians believe that he chose the subject of cards because the people playing the game were essentially a form of human still life. He was also probably influenced by the Nain Brothers (1599-1677) whose Card Players (c.1642) was in the collection of his local art museum in Aix-en-Provence."
   },
   {
     "author": "Henri Rousseau",
     "name": "The Sleeping Gypsy",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/La_Boh%C3%A9mienne_endormie.jpg/2560px-La_Boh%C3%A9mienne_endormie.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "Rousseau and his Parisian contemporaries were fascinated by wandering gypsies, the Romany people known in France as bohémiens: men and women exiled to the fringes of society during the dramatic changes of the mid-nineteenth century. French writers and artists had historically linked the Romany to Egypt as well as Bohemia, which may explain Rousseau’s depiction of a dark-skinned woman sleeping calmly—despite the large lion sniffing at her shoulder—in an arid landscape. With its flat planes of pure color, simple geometric forms, dreamlike atmosphere, and exotic subject, The Sleeping Gypsy at once conjures a desire for a preindustrial past and asserts its status as a new kind of modern art; the details of the lion’s unnerving eye and the figure’s zipperlike teeth evidence the artist’s singular pictorial imagination. Rousseau, a toll collector for the city of Paris (thus known also as Le Douanier), was largely self-taught, although he had grand ambitions of entering the Académie Française. Denied the official acceptance he craved, he later became a hero, although somewhat unwittingly, to the early-twentieth-century avant-garde painters, who claimed him as one of their own."
   },
   {
     "name": "The Storm on the Sea of Galilee",
     "author": "Rembrandt",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/1648px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "Rembrandt’s most striking narrative painting in America, Christ in the Storm on the Sea of Galilee, is also his only painted seascape. Dated 1633, it was made shortly after Rembrandt moved to Amsterdam from his native Leiden, when he was establishing himself as the city’s leading painter of portraits and historical subjects. The detailed rendering of the scene, the figures’ varied expressions, the relatively polished brushwork, and the bright coloring are characteristic of Rembrandt’s early style. Eighteenth-century critics like Arnold Houbraken often preferred this early period to Rembrandt’s later, broader, and less descriptive manner. The biblical scene pitches nature against human frailty – both physical and spiritual. The panic-stricken disciples struggle against a sudden storm, and fight to regain control of their fishing boat as a huge wave crashes over its bow, ripping the sail and drawing the craft perilously close to the rocks in the left foreground. One of the disciples succumbs to the sea’s violence by vomiting over the side. Amidst this chaos, only Christ, at the right, remains calm, like the eye of the storm. Awakened by the disciples’ desperate pleas for help, he rebukes them: “Why are ye fearful, O ye of little faith?” and then rises to calm the fury of wind and waves. Nature’s upheaval is both cause and metaphor for the terror that grips the disciples, magnifying the emotional turbulence and thus the image’s dramatic impact."
   },
   {
     "name": "The Fighting Temeraire",
     "author": "J.M.W. Turner",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Turner%2C_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg/2560px-Turner%2C_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "Completed by Turner in 1838, The Fighting Temeraire was first displayed at the Royal Academy where it was considered, 'As grand a picture as ever figured on the walls of any academy, or came from the easel of any painter.' The image shows a specific historical incident; described in the title of the painting as, ‘The Fighting Temeraire being tugged to her last berth to be broken up’. When it was launched in 1798, the HMS Temeraire embodied the pinnacle of British ship-building. 180-feet long, made from English oak and armed with 98 guns, she was one of the largest warships of the period. The ship’s mythical status owes much to its role in the British victory at the Battle of Trafalgar (1805), during which she played a decisive role, at one point saving the fleets’ flagship, the HMS Victory. For this reason, the Temeraire became a symbol of military prowess that endured throughout the 19th century. In the years following the battle, the Temeraire was slowly retired from naval service, until in 1838, it was auctioned off to be broken up – a natural end for wooden ships, whose materials would be removed and collected for various purposes. It was for this reason that, on the 5th of September 1838, the Temeraire was transported from its station at Sheerness, down the River Thames, eventually reaching its final resting place at the breakers’ yard in Rotherhithe, in south-east London."
   },
   {
     "name": "Blue Dancers",
     "author": "Edgar Degas",
     "imageUrl": "https://uploads3.wikiart.org/images/edgar-degas/blue-dancers.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "The world of ballet is a favourite theme of Degas. Yet, unlike many of his contemporaries, the artist was attracted not by the colourful spectacle of the ballet itself, but the prose of life off-stage. Blue Dancers may be a sketch of one and the same dancer. Here she is tying up her ballet shoe, there adjusting her dress, examining her costume and standing in the wings. United on a single sheet these ordinary movements turn into a splendid dance: the magic of the theatre and the magic of painting are conjured up before our eyes. Thanks to the use of the pastel medium Degas achieves a remarkable richness of texture and colour combinations here. The small line-strokes are applied in different directions, merging into resonant streams of blue shadow or scattering as reflected light in the dancer's hair. The artist Maurice Denis who visited Moscow in 1909 and saw this pastel by Degas in Sergei Shchukin's private gallery at home had this to say about it: 'There is a most superb, resonant and new blue Degas in the large drawing room.'"
   },
   {
     "name": "Nocturne in Black and Gold - The Falling Rocket",
     "author": "James Abbott McNeill Whistler",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Whistler-Nocturne_in_black_and_gold.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "Nocturne in Black and Gold – The Falling Rocket is a c. 1875 painting by James Abbott McNeill Whistler held in the Detroit Institute of Arts. The painting exemplified the Art for art's sake movement – a concept formulated by Pierre Jules Théophile Gautier and Charles Baudelaire. First shown at the Grosvenor Gallery in London in 1877, it is one of two works (the other being Nocturne in Black and Gold – The Firewheel) inspired by the Cremorne Gardens, a celebrated pleasure resort in London. One of his many works from his series of Nocturnes, it is the last of the London Nocturnes and is now widely acknowledged to be the high point of Whistler's middle period. Whistler's depiction of the industrial city park in The Falling Rocket includes a fireworks display in the foggy night sky. Nocturne in Black and Gold – The Falling Rocket is most famously known as the inception of the lawsuit between Whistler and the art critic John Ruskin."
   },
   {
     "name": "The Great Wave off Kanagawa",
     "author": "Katsushika Hokusai",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/2560px-The_Great_Wave_off_Kanagawa.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "Katsushika Hokusai’s much celebrated series, Thirty-Six Views of Mount Fuji (Fugaku sanjûrokkei), was begun in 1830, when the artist was 70 years old. This tour-de-force series established the popularity of landscape prints, which continues to this day. Perhaps most striking about the series is Hokusai’s copious use of the newly affordable Berlin blue pigment, featured in many of the compositions in the color for the sky and water. Mount Fuji is the protagonist in each scene, viewed from afar or up close, during various weather conditions and seasons, and from all directions. The most famous image from the set is the “Great Wave” (Kanagawa oki nami ura), in which a diminutive Mount Fuji can be seen in the distance under the crest of a giant wave. The three impressions of Hokusai’s Great Wave in the Art Institute are all later impressions than the first state of the design."
   },
   {
     "name": "A Sunday on La Grande Jatte",
     "author": "Georges Seurat",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg/2560px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "In his best-known and largest painting, Georges Seurat depicted people from different social classes strolling and relaxing in a park just west of Paris on La Grande Jatte, an island in the Seine River. Although he took his subject from modern life, Seurat sought to evoke the sense of timelessness associated with ancient art, especially Egyptian and Greek sculpture. He once wrote, “I want to make modern people, in their essential traits, move about as they do on those friezes, and place them on canvases organized by harmonies of color.” Seurat painted A Sunday on La Grande Jatte—1884 using pointillism, a highly systematic and scientific technique based on the hypothesis that closely positioned points of pure color mix together in the viewer’s eye. He began work on the canvas in 1884 (and included this date in the title) with a layer of small, horizontal brushstrokes in complementary colors. He next added a series of dots that coalesce into solid and luminous forms when seen from a distance. Sometime before 1889 Seurat added a border of blue, orange, and red dots that provide a visual transition between the painting’s interior and the specially designed white frame, which has been re-created at the Art Institute."
   },
   {
     "name": "The Hay Wain",
     "author": "John Constable",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/John_Constable_The_Hay_Wain.jpg",
     "wrongAuthors": [],
-    "level": "hard"
+    "level": "hard",
+    "description": "The Hay Wain, oil painting created in 1821 by English landscape artist John Constable. It is not only the best known work by Constable, it is also one of the most popular English paintings. The tangible presence of a warm summer’s afternoon is strikingly apparent in this, probably Constable’s most famous work. The imposing 6-foot (1.8-m) canvas was painted in 1821 in his London studio and based on a series of oil sketches made the summer before. Constable developed the unusual technique of producing a full-size oil sketch of his large works that enabled him to fully resolve the composition and which offer a fascinating insight into the artist’s working practices. The Hay Wain, which was first exhibited in 1821 but failed to receive much recognition, depicts a still millstream near Flatford Mill in Suffolk. It was bought in 1824 by the French art dealer John Arrowsmith and exhibited at the Paris Salon, where it won a gold medal. It was greatly admired by Eugène Delacroix and Théodore Géricault, among others, and was to prove influential on the development of landscape painting, especially in France, and in particular on the Barbizon school."
   }
 ]
