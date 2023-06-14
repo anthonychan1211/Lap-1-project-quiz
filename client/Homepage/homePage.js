@@ -1,16 +1,16 @@
 const easyButton = () =>{
-    const start = document.querySelector("#play")
+    const start = document.querySelector("#easy")
     start.addEventListener('click', () => {
-        console.log("testing")
-        window.open("../quesPage.html","_self")
+        let difficulty = "easy"
+        window.open(`../quesPage/${difficulty}.html`,"_self")
     })
 }
 
 const hardButton = () =>{
-    const start = document.querySelector("#play")
+    const start = document.querySelector("#hard")
     start.addEventListener('click', () => {
-        console.log("testing")
-        window.open("../quesPage.html","_self")
+        let difficulty = "hard"
+        window.open(`../quesPage.html`,"_self")
     })
 }
 
