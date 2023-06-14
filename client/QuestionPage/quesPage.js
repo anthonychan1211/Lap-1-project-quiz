@@ -176,15 +176,16 @@ const finishGame = () => {
   playEasyMode.addEventListener("click",() => {
 
     fetchStatus = false;     
-    difficulty = "easy"
-    runGame(1,0,0)    
+    localStorage.setItem("difficulty", "easy");
+    window.location.reload();
+        
   });
 
   playHardMode.addEventListener("click", () => {
 
     fetchStatus = false;      
-    difficulty = "hard"
-    runGame(1,0,0)
+    localStorage.setItem("difficulty", "hard");
+    window.location.reload();
   });  
 }
 
@@ -226,8 +227,7 @@ let score = 0;
 let data = null;
 let fetchStatus = false;
 
-// const restartGame = (mode) => {
-  console.log(fetchStatus, quesNum, wrongGuess)
+// const restartGame = (mode) => { 
 //   quesNum = 1;
 //   wrongGuess = 0;
 //   score = 0;
