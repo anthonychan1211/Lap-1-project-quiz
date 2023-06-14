@@ -1,3 +1,6 @@
+
+let difficulty = localStorage.getItem("difficulty")
+
 const fetchData = async (difficulty) => {
   const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`);
   const data = await res.json();  
@@ -174,7 +177,7 @@ let quesNum = 1;
 let wrongGuess = 0;
 let score = 0;
 
-let difficulty = 'easy'
+
 
 let data = null;
 let fetchStatus = false;
