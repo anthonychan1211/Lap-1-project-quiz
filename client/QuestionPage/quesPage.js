@@ -55,8 +55,9 @@ const displayQues = async (quesNum) => {
     choice.addEventListener('click', () => {
       let correct = false
       if (choice.textContent==correctAuthor){
-        correct = true
+        correct = true        
         score += (5-wrongGuess)
+        choice.style.backgroundColor = 'green' 
       } else {
         correct = false
         choice.disabled=true
