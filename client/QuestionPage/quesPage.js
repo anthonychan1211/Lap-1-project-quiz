@@ -1,4 +1,3 @@
-// This code is published under GNU GPL v3.0 License. Copyright 2023 404: Name Not Found (Liskov)
 const fetchData = async (difficulty) => {
   const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`) 
   const data = await res.json()   
