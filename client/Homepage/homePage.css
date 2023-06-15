@@ -1,38 +1,31 @@
-
-
-
-
 .some-page-wrapper {
-  margin: 15px;
+  margin: 1px;
   background-color: red;
 }
-
 .row {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  gap: 40px;
+  background-color: rgb(254, 255, 255);
 }
-
 .column {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  background-color: rgb(255, 255, 255);
 }
-
-.left-column{
-  background-color: rgb(4, 24, 24);
+.left-column {
   height: 100%;
+  background-color: rgb(255, 255, 255);
 }
-
 .right-column {
-  background-color: rgb(4, 24, 24);
   height: 100%;
   text-align: center;
+  background-color: rgb(4, 24, 24);
 }
 .image {
   display: flex;
+  flex-direction: column;
   background: #34495e;
   border: 1px solid #34495e;
   width: 70%;
@@ -41,131 +34,90 @@
   align-items: center;
   object-position: center;
   margin: 5% 15% 5% 15%;
-
- }
-
-.image-contain {
-  display: flex;  
-  object-fit: contain;
-  object-position: center;
-  justify-content: center;
-  align-items: center;
-  
 }
-
-#Guesses{
-  color: rgb(0, 0, 0);
+.image-contain {
+  object-fit: cover;
+}
+#Guesses {
   background-color: rgb(22, 2, 39);
   border: solid 1px white;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.2em;
-   
- 
-  
-  margin: 10% 10% 10% 10%;
+  text-decoration: none;
+  font-size: 1.2em;
+
+  height: 100%;
   outline: none;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-  
 }
 
-#easy {
-  
-display: flex;
-color: rgb(0, 0, 0);
-background-color: green;
-border: solid 1px white;
-text-decoration:none;
-cursor:pointer;
-font-size:1.2em;
-padding:20px 300px;
-
-/* margin: 10px; */
-outline: none;
-justify-content: center;
-align-items: center;
-}
-
-#hard {
-
+.buttons {
   display: flex;
-  color: rgb(0, 0, 0);
-  background-color: red;
-  border: solid 1px white;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.2em;
-  padding:20px 300px;
-  
-  /* margin: 10px; */
-  outline: none;
-  justify-content: center;
-  align-items: center;
-  }
-
-
-body{
-background-color: rgb(4, 24, 24);
+  gap: 30px;
+  margin: 20px;
 }
-
-h1{
+.buttons > button {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  width: 150px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+#easy {
+  background-color: #5cd383;
+  color: white;
+}
+#hard {
+  background-color: rgb(238, 45, 45);
+  color: white;
+}
+h1 {
   text-align: center;
-  color: antiquewhite;
+  color: rgb(14, 13, 12);
   font-size: 70px;
 }
-
-#Guess1,  #Guess2,  #Guess3,  #Guess4  {
-background-color: pink;
-width:20%;
-margin: 2%;
-
-justify-content: space-evenly;
-}
-
 p1 {
-
-display: flex;
-color: aliceblue;
-justify-content: center;
-align-items: center;
-margin-top: 10%;
+  display: flex;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
 }
-
-#start{
-  color: rgb(0, 0, 0);
+#Guess1,
+#Guess2,
+#Guess3,
+#Guess4,
+#Guess5 {
+  background-color: pink;
+  width: 16%;
+  margin: 2%;
+  font-size: 0.65em;
+  justify-content: space-evenly;
+}
+#start {
   background-color: rgb(22, 2, 39);
   border: solid 1px white;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.2em;
-  
-  width: 80%;
-  height: 70%;
-  
-  margin: 10% ;
+  text-decoration: none;
+  font-size: 1.2em;
+  width: 95%;
+  height: 100%;
+  margin: 0% 0% 5% 0%;
   outline: none;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: row;
-  cursor:pointer;
-
 }
-
 h2 {
-color: aliceblue;
-margin-bottom: 0%;
+  color: aliceblue;
+  margin-bottom: 0%;
 }
 
-#buttons{
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-cursor:pointer;
+#borderimage {
+  border: 40px solid transparent;
+  padding: 0px;
+  border-image: url(border.png) 30;
 }
