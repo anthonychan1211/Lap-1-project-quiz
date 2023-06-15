@@ -62,6 +62,7 @@ const displayQues = async (quesNum) => {
 
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
+    //choice.className
     choice.textContent = randomizeChoices[i];
     answerSection.appendChild(choice);
 

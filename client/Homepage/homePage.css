@@ -79,10 +79,10 @@ h3 {
   cursor: pointer;
   max-height: 50px;
 }
-#easy {
+/* #easy {
   background-color: #5cd383;
   color: white;
-}
+} */
 #hard {
   background-color: rgb(238, 45, 45);
   color: white;
