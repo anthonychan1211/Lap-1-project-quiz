@@ -11,10 +11,12 @@ const fetchData = async (difficulty) => {
 const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.textContent=""
 
-  const homePage = document.createElement("a");
+  const homePageBlock = document.createElement("p");
+  const homePage = document.createElement('a')
   homePage.textContent = "Home";
   homePage.href = "../Homepage/homePage.html"
-  topBar.appendChild(homePage);
+  topBar.appendChild(homePageBlock);
+  homePageBlock.appendChild(homePage);
 
   const quesProgress = document.createElement("p");
   quesProgress.textContent = `Q${quesNum}/5`;
