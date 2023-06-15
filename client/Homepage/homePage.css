@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap");
+:root {
+  --text-white-color: rgb(234, 234, 234);
+}
 body {
   margin: 0;
   padding: 0;
-  background-color: #151d53;
+  background-image: url("./homePagePic.JPG");
+  background-size: cover;
 }
-.some-page-wrapper {
-  margin: 1px;
-  background-color: red;
+.page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.32);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 h3 {
   text-align: center;
@@ -16,27 +24,19 @@ h3 {
   font-family: "Tangerine", cursive;
   color: white;
 }
-.row {
-  display: flex;
-  gap: 10px;
-  background-color: #151d53;
-}
 
-.column {
+.instruction {
+  background-color: rgba(102, 122, 162, 0.471);
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-  background-color: rgb(255, 255, 255);
-  margin: 20px;
-}
-.left-column {
-  height: 100%;
-}
-.right-column {
-  height: 100%;
   text-align: center;
-  background-color: rgb(4, 24, 24);
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgb(22, 22, 22);
+}
+.instruction-text {
+  color: rgb(234, 234, 234);
 }
 .image {
   display: flex;
@@ -53,84 +53,57 @@ h3 {
 .image-contain {
   object-fit: cover;
 }
-#Guesses {
-  background-color: #bdcfd5;
-  border: solid 1px white;
-  text-decoration: none;
-  font-size: 1.2em;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 .buttons {
   display: flex;
   gap: 30px;
-  margin: 20px;
+  margin: 40px auto;
 }
 .buttons > button {
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   font-size: 1.2rem;
   width: 150px;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  max-height: 50px;
+}
+.buttons > button:hover {
+  box-shadow: 5px 5px 6px rgba(33, 33, 33, 0.703);
+  transition: all 0.1s;
 }
 #easy {
-  background-color: #5cd383;
+  background-color: rgb(66, 108, 174);
+  color: white;
+  border: 1px solid rgb(66, 108, 174);
+}
+#easy:hover {
+  background-color: rgb(66, 108, 174);
   color: white;
 }
 #hard {
-  background-color: rgb(238, 45, 45);
+  background-color: rgba(196, 180, 60, 0.882);
   color: white;
 }
 h1 {
   font-family: "Tangerine", cursive;
   text-align: center;
   color: rgb(234, 234, 234);
-  font-size: 75px;
+  font-size: 85px;
   margin: 40px;
   margin-bottom: 10px;
-}
-.instruction-p {
-  margin: 20px 60px;
-}
-#Guess1,
-#Guess2,
-#Guess3,
-#Guess4,
-#Guess5 {
-  background-color: pink;
-  width: 16%;
-  margin: 2%;
-  font-size: 0.65em;
-  justify-content: space-evenly;
-}
-#start {
-  background-color: #bdcfd5;
-  border: solid 1px white;
-  text-decoration: none;
-  font-size: 1.2em;
-  height: 100%;
-  margin: 0% 0% 5% 0%;
-  outline: none;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 h2 {
   margin-bottom: 0%;
 }
-
-#borderimage {
-  border: 40px solid transparent;
-  padding: 0px;
-  border-image: url(border.png) 30;
+.subtitle {
+  font-size: 2.4rem;
 }
-.choices {
-  margin: 30px;
+.instruction-p {
+  margin: 20px 60px;
+  text-shadow: 0 0 2px black;
+  font-size: 1.3rem;
+}
+.instruction-title {
+  font-size: 1.8rem;
+  text-decoration: underline;
 }
