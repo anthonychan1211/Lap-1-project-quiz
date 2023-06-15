@@ -66,7 +66,7 @@ const displayQues = async (quesNum) => {
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
-    answerSection.appendChild(choice);    
+    answerSection.appendChild(choice);   
 
     choice.addEventListener('click', () => {
       let correct = false
