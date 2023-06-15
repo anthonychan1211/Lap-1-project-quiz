@@ -237,19 +237,17 @@ const zoomOut = () => {
 
 const showDescription = () => {
   descriptionSection.classList.remove("hidden");
+  const image = document.querySelector("#painting");
+  const imageUrl = image.src;
+  const correctObj = data.find((obj) => obj.imageUrl === imageUrl);
   const paragraphElement = descriptionSection.querySelector("p");
   const descriptionTitle =
     descriptionSection.querySelector(".description-title");
-  descriptionTitle.textContent = `${data[quesNum - 1].name}(${
-    data[quesNum - 1].author
-  })`;
-  const image = document.querySelector("#painting");
-  const imageUrl = image.src;
-  const correctObj = data.filter((obj) => obj.imageUrl === imageUrl);
-  const description = correctObj["0"].description;
+  descriptionTitle.textContent = `${correctObj.name}(${correctObj.author})`;
+  const description = correctObj.description;
   const quesImage = document.createElement("img");
   quesImage.className = "desciption-painting";
-  quesImage.src = data[quesNum - 1].imageUrl;
+  quesImage.src = correctObj.imageUrl;
   quesImage.alt = `Q${quesNum} painting`;
   descriptionSection.appendChild(quesImage);
   paragraphElement.textContent = description;
