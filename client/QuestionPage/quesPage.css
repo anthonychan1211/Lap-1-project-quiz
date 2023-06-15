@@ -1,13 +1,13 @@
 body {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family:'Times New Roman', Times, serif;
 }
-.topBar p, a {
+.topBar p {
   padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
   border-style: solid;
 }
 .topBar {
@@ -15,7 +15,7 @@ body {
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-.answers {
+.answers{
   display: flex;
   justify-content: space-evenly;
 }
@@ -45,5 +45,7 @@ body {
 }
 button {
   padding: 5px;
-  font-size: 15px;
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
 }
+

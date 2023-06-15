@@ -11,10 +11,12 @@ const fetchData = async (difficulty) => {
 const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.textContent=""
 
-  const homePage = document.createElement("a");
+  const homePageBlock = document.createElement("p");
+  const homePage = document.createElement('a')
   homePage.textContent = "Home";
   homePage.href = "../Homepage/homePage.html"
-  topBar.appendChild(homePage);
+  topBar.appendChild(homePageBlock);
+  homePageBlock.appendChild(homePage);
 
   const quesProgress = document.createElement("p");
   quesProgress.textContent = `Q${quesNum}/5`;
@@ -61,8 +63,7 @@ const displayQues = async (quesNum) => {
   for (let i = 0; i < 5; i++) {
     const choice = document.createElement("button");
     choice.textContent = randomizeChoices[i];
-    answerSection.appendChild(choice);
-    console.log(choice)    
+    answerSection.appendChild(choice);   
 
     choice.addEventListener('click', () => {
       let correct = false
@@ -98,7 +99,7 @@ const checkAnswer = (correct,correctAuthor) => {
     painting.style.transform = `scale(${1})`
   } else {
     //wrongGuess++
-    topBar.childNodes[3].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
+    topBar.childNodes[4].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
       zoomLevel=10
       painting.style.translate = "-50% -50%";
@@ -226,21 +227,5 @@ let score = 0;
 
 let data = null;
 let fetchStatus = false;
-
-// const restartGame = (mode) => { 
-//   quesNum = 1;
-//   wrongGuess = 0;
-//   score = 0;
-//   fetchStatus = false;
-//   difficulty = mode;
-//   const buttons = answerSection.querySelectorAll("button") ;
-
-//   buttons.forEach(button => {
-//     answerSection.removeChild(button);
-//   });
- 
-//   console.log("test")
-//   runGame(quesNum,wrongGuess,score);
-// }
 
 runGame(quesNum,wrongGuess,score);
