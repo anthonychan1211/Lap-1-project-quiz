@@ -1,84 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./homePage.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./homePage.css" />
+    <script
+      src="https://kit.fontawesome.com/a954e12fc7.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./homePage.js" defer></script>
     <script src="https://kit.fontawesome.com/a954e12fc7.js" crossorigin="anonymous"></script>
   
     <title>Document</title>
-</head>
-<i class="fa-light fa-circle-caret-right"></i>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <h1>Van Gogh or Van No?</h1>
+      <h3 class="subtitle">Challenge Your Painter Radar!</h3>
+      <div class="instruction">
+        <h2 class="instruction-text instruction-title">Instructions</h2>
+        <p class="instruction-text instruction-p">
+          Can you guess the names/artists of these famous paintings?
+          <br /><br />
+          The Painting will start zoomed in, if you get the answer right away
+          you get 5 points! <br /><br />
+          If you get the answer wrong the painting will zoom out and you try
+          again but for less points. <br /><br />
+          You have 4 chances to gain points! Press the button to start!!
+        </p>
 
-<h1>
-    Van Gogh or Van No?
-</h1>
-<h3>Challenge Your Painter Radar!</h3>
-<body>
-    <i class="fa-thin fa-forward fa-lg"></i>
-    <div class='some-page-wrapper'>
-        <div class='row'>
-          <div class='column'>
-            <div class='left-column'>
-                <div class="container" id="start">
-                    <h2>Instructions</h2>
-                <p class="instruction-p"> Can you guess the names/artists of these famous paintings? <br><br> 
-                    The Painting will start zoomed in, if you get the answer right away you get 5 points! <br><br>
-                    If you get the answer wrong the painting will zoom out and you try again but for less points. <br><br>
-                    You have 4 chances to gain points!
-                    Press the button to start!!
-                </p>
-               
-                <div >
-                    <button class="btn btn-outline-dark" id = "easy">
-                        Easy Mode
-                    </button>
-                    <button id = "hard">
-                        Hard Mode
-                    </button>
-                </div>
-            </div>
-          </div>
-        </div>
-          <div class='column'>
-            <div class='right-column'>
-                
-        
-                    
-                
-
-                <div class="container" id="Guesses">
-                    <h2>Select the author of this painting:</h2>
-                    <img class="image image-contain" src="./homePagePic.JPG" />
-                    <div class="choices">
-                        <button class="guess-button" >
-                            Leonardo Davinci
-                        </button>
-                        <button class="guess-button">
-                            Vincent Van Gogh
-                        </button>
-                        <button class="guess-button">
-                            Salvador Dali
-                        </button>
-                        <button class="guess-button">
-                            Edvard Munch
-                        </button>
-                        <button class="guess-button">
-                            Michalengelo
-                        </button>
-                    </div>
-                    
-                </div>
-                </div>
-            </div>
-          </div>
+        <div class="buttons">
+          <button id="easy">Easy Mode</button>
+          <button id="hard">Hard Mode</button>
         </div>
       </div>
-     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>  
-</body>
+      <footer>&copy; 2023 404: Name Not Found</footer>
+    </div>
+  </body>
 </html>

@@ -10,30 +10,19 @@ const fetchData = async (difficulty) => {
 
 const displayTopBar = (quesNum, wrongGuess, score) => {
   topBar.textContent = "";
-
-  // const homePageBlock = document.createElement("p");
-  // const homePage = document.createElement('a')
-  // homePage.textContent = "Home";
-  // homePage.href = "../Homepage/homePage.html"
-  // topBar.appendChild(homePageBlock);
-  // homePageBlock.appendChild(homePage);
-
   const quesProgress = document.createElement("p");
-  quesProgress.textContent = `Q${quesNum}/5`;
+  quesProgress;
+  quesProgress.innerHTML = `<i class="fa-solid fa-circle-question"></i>  ${quesNum} / 5`;
   topBar.appendChild(quesProgress);
 
   const scoreBar = document.createElement("p");
-  scoreBar.textContent = `Score: ${score}`;
+  scoreBar.innerHTML = `<i class="fa-solid fa-star"></i> Score: ${score}`;
   topBar.appendChild(scoreBar);
 
-  // const instruction = document.createElement("p");
-  // instruction.textContent = "Select the author of the painting";
-  // topBar.appendChild(instruction);
-
   const chancesLeft = document.createElement("p");
-  chancesLeft.textContent = `${"x ".repeat(wrongGuess)}${"o ".repeat(
-    4 - wrongGuess
-  )}`;
+  chancesLeft.innerHTML = `${`<i class="fa-solid fa-pen-ruler"></i> `.repeat(
+    wrongGuess
+  )}${`<i class="fa-solid fa-palette"></i> `.repeat(4 - wrongGuess)}`;
   topBar.appendChild(chancesLeft);
 };
 
@@ -104,9 +93,9 @@ const checkAnswer = (correct, correctAuthor) => {
     painting.style.translate = "-50% -50%";
     painting.style.transform = `scale(${1})`;
   } else {
-    topBar.childNodes[2].textContent = `${"x ".repeat(wrongGuess)}${"o ".repeat(
-      4 - wrongGuess
-    )}`;
+    topBar.childNodes[2].innerHTML = `${`<i class="fa-solid fa-pen-ruler"></i> `.repeat(
+      wrongGuess
+    )} ${`<i class="fa-solid fa-palette"></i> `.repeat(4 - wrongGuess)}`;
     if (wrongGuess == 4) {
       zoomLevel = 10;
       painting.style.translate = "-50% -50%";
@@ -135,12 +124,12 @@ const results = (result, correctAuthor) => {
       nextQues(correctAuthor);
     }
   } else if (result == "incorrect") {
-    resultsText.textContent = `Incorrect! You have ${4 - wrongGuess} chance${
+    resultsText.textContent = `Oops! You have ${4 - wrongGuess} chance${
       4 - wrongGuess == 1 ? `` : `s`
     } left.`;
     resultsSection.appendChild(resultsText);
   } else if (result == "fail") {
-    resultsText.textContent = "Incorrect! You have no chances left.";
+    resultsText.textContent = "Sad! You have no chances left.";
     showDescription();
     resultsSection.appendChild(resultsText);
     if (quesNum < 5) {
@@ -164,7 +153,7 @@ const results = (result, correctAuthor) => {
 const nextQues = (correctAuthor) => {
   const nextQButton = document.createElement("button");
   nextQButton.className = "next-q-button";
-  nextQButton.textContent = "Next question";
+  nextQButton.innerHTML = "&#10132;";
   descriptionSection.appendChild(nextQButton);
 
   nextQButton.addEventListener("click", () => {
@@ -244,7 +233,7 @@ const showDescription = () => {
   const paragraphElement = descriptionSection.querySelector("p");
   const descriptionTitle =
     descriptionSection.querySelector(".description-title");
-  descriptionTitle.textContent = `${correctObj.name}(${correctObj.author})`;
+  descriptionTitle.innerHTML = `${correctObj.name} <br>(${correctObj.author})`;
   const description = correctObj.description;
   const quesImage = document.createElement("img");
   quesImage.className = "desciption-painting";
