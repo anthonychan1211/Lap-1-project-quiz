@@ -12,6 +12,7 @@
 ##Technologies
 
 * Javascript
+* HTML
 * CSS
 * Express
 
