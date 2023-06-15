@@ -103,7 +103,6 @@ const checkAnswer = (correct, correctAuthor) => {
     painting.style.translate = "-50% -50%";
     painting.style.transform = `scale(${1})`;
   } else {
-    //wrongGuess++
     topBar.childNodes[2].textContent = `${"x ".repeat(wrongGuess)}${"o ".repeat(
       4 - wrongGuess
     )}`;
@@ -153,7 +152,6 @@ const results = (result, correctAuthor) => {
       if (button.textContent == correctAuthor) {
         button.style.backgroundColor = "green";
         button.style.color = "white";
-        showDescription();
       }
     });
     displayTopBar(quesNum, wrongGuess, score);
@@ -187,15 +185,17 @@ const nextQues = (correctAuthor) => {
 const finishGame = () => {
   const resultsText = resultsSection.childNodes[0];
   resultsText.textContent = `You have completed the game! Your final score is ${score} points.`;
+  const playAgainSection = document.createElement("div");
+  playAgainSection.className = "play-again-section";
+  descriptionSection.appendChild(playAgainSection);
   const playEasyMode = document.createElement("button");
   const playHardMode = document.createElement("button");
-
   playEasyMode.textContent = "Play again: Easy Mode";
   playEasyMode.classList.add("easy-mode-button");
   playHardMode.textContent = "Play again: Hard Mode";
   playHardMode.classList.add("hard-mode-button");
-  resultsSection.appendChild(playEasyMode);
-  resultsSection.appendChild(playHardMode);
+  playAgainSection.appendChild(playEasyMode);
+  playAgainSection.appendChild(playHardMode);
 
   playEasyMode.addEventListener("click", () => {
     fetchStatus = false;

@@ -106,9 +106,23 @@ h1 {
 }
 .easy-mode-button {
   background-color: #5cd383 !important;
+  padding: 15px;
+  font-size: 1.3rem;
+  margin: 0 10px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
 }
 .hard-mode-button {
   background-color: rgb(238, 45, 45) !important;
+  padding: 15px;
+  font-size: 1.3rem;
+  margin: 0 10px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
 }
 .description {
   display: block;
@@ -128,9 +142,12 @@ h1 {
 }
 .description p {
   color: white;
+  margin: 30px 80px;
+  text-align: center;
+  font-size: 1.1rem;
 }
 .desciption-painting {
-  width: 50%;
+  width: 40%;
 }
 .next-q-button {
   display: block;
@@ -148,4 +165,7 @@ h1 {
 }
 .description-title {
   color: white;
+}
+.play-again-section {
+  margin: 20px;
 }
