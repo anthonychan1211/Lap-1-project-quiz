@@ -50,6 +50,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 
 ##Screenshots / Images
 
+- to be added
+
 ##Future features
 * Add a 'medium' level
 * Log in system, allow classes to compete
