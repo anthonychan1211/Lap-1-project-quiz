@@ -1,42 +1,36 @@
 // This code is published under GNU GPL v3.0 License. Copyright 2023 404: Name Not Found (Liskov)
-let difficulty = localStorage.getItem("difficulty")
-
 const fetchData = async (difficulty) => {
-  const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`);
-  const data = await res.json();  
-  return data;
-};
+  const res = await fetch(`http://localhost:3000/randomQuestions/${difficulty}`) 
+  const data = await res.json()   
+  return data 
+} 
 
 
 const displayTopBar = (quesNum,wrongGuess,score) => {
   topBar.textContent=""
 
-  const homePageBlock = document.createElement("p");
+  const homePageBlock = document.createElement("p") 
   const homePage = document.createElement('a')
-  homePage.textContent = "Home";
+  homePage.textContent = "Home" 
   homePage.href = "../Homepage/homePage.html"
-  topBar.appendChild(homePageBlock);
-  homePageBlock.appendChild(homePage);
+  topBar.appendChild(homePageBlock) 
+  homePageBlock.appendChild(homePage) 
 
-  const quesProgress = document.createElement("p");
-  quesProgress.textContent = `Q${quesNum}/5`;
-  topBar.appendChild(quesProgress);
+  const quesProgress = document.createElement("p") 
+  quesProgress.textContent = `Q${quesNum}/5` 
+  topBar.appendChild(quesProgress) 
   
   const scoreBar = document.createElement("p")
   scoreBar.textContent = `Score: ${score}`
   topBar.appendChild(scoreBar)
 
-  const instruction = document.createElement("p");
-  instruction.textContent = "Select the author of the painting";
-  topBar.appendChild(instruction);
+  const instruction = document.createElement("p") 
+  instruction.textContent = "Select the author of the painting" 
+  topBar.appendChild(instruction) 
 
-  const chancesLeft = document.createElement("p");
-  chancesLeft.textContent = `${"x ".repeat(wrongGuess)}${"o ".repeat(
-    4 - wrongGuess
-  )}`;
-  topBar.appendChild(chancesLeft);
-
-  
+  const chancesLeft = document.createElement("p") 
+  chancesLeft.textContent = `${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}` 
+  topBar.appendChild(chancesLeft) 
 }
 
 const displayQues = async (quesNum) => {
@@ -47,26 +41,25 @@ const displayQues = async (quesNum) => {
   if (!fetchStatus){
     data = await fetchData(difficulty)
     fetchStatus = true
-    
   }
 
-  const quesImage = document.createElement("img");
+  const quesImage = document.createElement("img") 
   quesImage.id="painting"
   let correctAuthor = data[quesNum-1].author
-  quesImage.src = data[quesNum - 1].imageUrl;
-  quesImage.alt = `Q${quesNum} painting`;
-  questionSection.appendChild(quesImage);
+  quesImage.src = data[quesNum - 1].imageUrl 
+  quesImage.alt = `Q${quesNum} painting` 
+  questionSection.appendChild(quesImage) 
 
-  let randomPixal = randomSpotImg();
+  let randomPixel = randomSpotImg() 
 
-  let randomizeChoices = data[quesNum - 1].wrongAuthors;
-  let randomNum = Math.floor(Math.random() * 5);
-  randomizeChoices.splice(randomNum, 0, correctAuthor);
+  let randomizeChoices = data[quesNum - 1].wrongAuthors 
+  let randomNum = Math.floor(Math.random() * 5) 
+  randomizeChoices.splice(randomNum, 0, correctAuthor)
 
-  for (let i = 0; i < 5; i++) {
-    const choice = document.createElement("button");
-    choice.textContent = randomizeChoices[i];
-    answerSection.appendChild(choice);   
+  for (let i = 0; i < 5;  i++) {
+    const choice = document.createElement("button")
+    choice.textContent = randomizeChoices[i] 
+    answerSection.appendChild(choice)    
 
     choice.addEventListener('click', () => {
       let correct = false
@@ -76,11 +69,13 @@ const displayQues = async (quesNum) => {
         topBar.childNodes[2].textContent=`Score: ${score}`
         choice.style.backgroundColor = 'green' 
       } else {
-        let newX;
-        let newY;
+        let newX 
+        let newY 
         wrongGuess++
-        randomPixal[0] > 50 ? (newX = randomPixal[0] - 50 + ((randomPixal[0] - 50) / 4) * wrongGuess) : (newX = randomPixal + ((50 - randomPixal[0]) / 4) * wrongGuess);
-        randomPixal[1] > 50 ? (newY = randomPixal[1] - 50) : (newY = 50 - randomPixal[1]);
+        randomPixel[0] > 50 ? (newX = randomPixel[0] - 50 + ((randomPixel[0] - 50) / 4) * wrongGuess) 
+            : (newX = randomPixel + ((50 - randomPixel[0]) / 4) * wrongGuess)
+        randomPixel[1] > 50 ? (newY = randomPixel[1] - 50) 
+            : (newY = 50 - randomPixel[1])
         quesImage.style.translate = `-${newX}% -${newY}%`
         correct = false
         choice.disabled=true
@@ -89,7 +84,7 @@ const displayQues = async (quesNum) => {
     })
   }
 
-};
+}
 
 const checkAnswer = (correct,correctAuthor) => {
   resultsSection.textContent=""
@@ -98,14 +93,13 @@ const checkAnswer = (correct,correctAuthor) => {
     zoomLevel = 10
     results('correct',correctAuthor)
     quesNum++
-    painting.style.translate = "-50% -50%";
+    painting.style.translate = "-50% -50%"
     painting.style.transform = `scale(${1})`
   } else {
-    //wrongGuess++
     topBar.childNodes[4].textContent=`${"x ".repeat(wrongGuess)}${"o ".repeat(4 - wrongGuess)}`
     if (wrongGuess==4){
       zoomLevel=10
-      painting.style.translate = "-50% -50%";
+      painting.style.translate = "-50% -50%"
       painting.style.transform = `scale(${1})`
       wrongGuess=0
       if (quesNum<5){
@@ -137,7 +131,6 @@ const results = (result,correctAuthor) => {
       showDescription()
       resultsSection.appendChild(resultsText)
       if (quesNum<5){
-
       nextQues(correctAuthor)
       }
   } 
@@ -185,19 +178,16 @@ const finishGame = () => {
   resultsSection.appendChild(playHardMode)
 
   playEasyMode.addEventListener("click",() => {
-
     fetchStatus = false;     
-    localStorage.setItem("difficulty", "easy");
-    window.location.reload();
-        
-  });
+    localStorage.setItem("difficulty", "easy")
+    window.location.reload()
+  })
 
   playHardMode.addEventListener("click", () => {
-
-    fetchStatus = false;      
-    localStorage.setItem("difficulty", "hard");
-    window.location.reload();
-  });  
+    fetchStatus = false    
+    localStorage.setItem("difficulty", "hard")
+    window.location.reload()
+  })
 }
 
 const runGame = (quesNum,wrongGuess,score) => {
@@ -211,44 +201,41 @@ const runGame = (quesNum,wrongGuess,score) => {
 }
 
 const randomSpotImg = () => {
-  const painting = document.getElementById("painting");
-  const randomX = Math.floor(Math.random() * 100);
-  const randomY = Math.floor(Math.random() * 100);
-  painting.style.translate = `-${randomX}% -${randomY}%`;
-  return [randomX, randomY];
-};
+  const painting = document.getElementById("painting")
+  const randomX = Math.floor(Math.random() * 100)
+  const randomY = Math.floor(Math.random() * 100)
+  painting.style.translate = `-${randomX}% -${randomY}%`
+  return [randomX, randomY]
+}
 
 const zoomOut = () => {
-  const painting = document.getElementById("painting");
-  zoomLevel -= (40/100) * zoomLevel;
+  const painting = document.getElementById("painting")
+  zoomLevel -= (40/100) * zoomLevel
   painting.style.transform = `scale(${zoomLevel})`
-
 }
 
 const showDescription = () => {
-
-  const paragraphElement = descriptionSection.querySelector('p');
+  const paragraphElement = descriptionSection.querySelector('p')
   const image = document.querySelector("#painting");
   const imageUrl = image.src;  
   const correctObj = data.filter(obj => obj.imageUrl === imageUrl);
   const description = correctObj["0"].description;
 
   paragraphElement.textContent = description      
-
 }
 
-const topBar = document.querySelector(".topBar");
-const questionSection = document.querySelector(".image-container");
-const answerSection = document.querySelector(".answers");
-const resultsSection = document.querySelector(".results");
-const descriptionSection = document.querySelector(".description");
+const topBar = document.querySelector(".topBar") 
+const questionSection = document.querySelector(".image-container") 
+const answerSection = document.querySelector(".answers") 
+const resultsSection = document.querySelector(".results") 
+const descriptionSection = document.querySelector(".description") 
 
 let zoomLevel =10
-let quesNum = 1;
-let wrongGuess = 0;
-let score = 0;
+let quesNum = 1 
+let wrongGuess = 0 
+let score = 0 
+let difficulty = localStorage.getItem("difficulty")
+let data = null 
+let fetchStatus = false 
 
-let data = null;
-let fetchStatus = false;
-
-runGame(quesNum,wrongGuess,score);
+runGame(quesNum,wrongGuess,score) 
