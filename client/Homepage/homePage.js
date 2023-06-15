@@ -1,3 +1,5 @@
+// This code is published under GNU GPL v3.0 License. Copyright 2023 404: Name Not Found (Liskov)
+
 const easyButton = () =>{
     const start = document.querySelector("#easy")
     start.addEventListener('click', () => {

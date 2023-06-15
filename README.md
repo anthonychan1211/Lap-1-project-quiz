@@ -1,4 +1,5 @@
-#LAP 1 PROJECT - GUESS THE PAINTING'S AUTHOR
+#Lap 1 Project
+##*Guess the Painter*
 
 ##Description
 
@@ -6,8 +7,16 @@
 
 ##Installation & Usage
 
-* Clone or download the repo.?????????????????
-* Are we going to host it in a website??
+* Clone repo onto local device
+* Move into server folder:
+`cd server`
+* Download node modules
+`npm install` / `npm install nodemon`
+* Run server
+`npm run dev` / `nodemon index.js`
+* Move back into main folder
+`cd ..`
+* Open homePage.html with live server
 
 ##Technologies
 
@@ -17,8 +26,22 @@
 * Express
 
 ##Process
+* Picked a subject/field to make a game for - Art
+* Brainstorming ideas and possible games
+* Split up the sub tasks among us
+* Created a Git repo and individual branches
+* Started by writing some pseudo code to break down the logic
+* Half worked on the API, server and logic (backend)
+* Other half worked on the HTML and JS (frontend)
+* Testing our functions with the console and browser throughout coding.
+* After completed the MVP, combined the backend and frontend using Git
+* Worked on debugging, styling together
+* Split up again to work on more features, repeated process
 
 
+##License
+
+GNU General Public License version 3. See our [license](./LICENSE.md) file for details.
 
 ##Bugs
 
