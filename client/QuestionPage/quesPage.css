@@ -9,10 +9,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0;
 }
 h1 {
   font-family: "Tangerine", cursive;
   font-size: 3rem;
+  margin: 15px;
 }
 .home-button {
   position: absolute;
@@ -129,13 +131,14 @@ h1 {
   position: absolute;
   width: 50%;
   inset: 0;
-  top: 23%;
+  top: 10%;
   bottom: 16%;
   text-align: center;
   margin: 0 auto;
   z-index: 9;
   background-color: #000000;
   overflow: scroll;
+  border-radius: 20px;
 }
 .description.hidden {
   display: none;
@@ -168,4 +171,7 @@ h1 {
 }
 .play-again-section {
   margin: 20px;
+}
+.result-text {
+  font-size: 1.5rem;
 }

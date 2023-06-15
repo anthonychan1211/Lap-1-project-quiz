@@ -124,6 +124,7 @@ const checkAnswer = (correct, correctAuthor) => {
 
 const results = (result, correctAuthor) => {
   const resultsText = document.createElement("p");
+  resultsText.className = "result-text";
   if (result == "correct") {
     resultsText.textContent = `Correct! You scored ${5 - wrongGuess} points.`;
     resultsSection.appendChild(resultsText);
