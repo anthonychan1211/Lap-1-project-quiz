@@ -1,5 +1,4 @@
-#Lap 1 Project
-##*Guess the Painter*
+##Lap 1 Project - *Guess the Painter*
 
 ##Description
 
@@ -38,10 +37,23 @@
 * Worked on debugging, styling together
 * Split up again to work on more features, repeated process
 
-
 ##License
 
-GNU General Public License version 3. See our [license](./LICENSE.md) file for details.
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+version 3.
 
-##Bugs
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+[GNU General Public License](./LICENSE.md) for more details.
 
+##Screenshots / Images
+
+##Future features
+* Add a 'medium' level
+* Log in system, allow classes to compete
+* Leader board of scores
+* Add more data to the API
+* Host to a website
+* Adapt the game for another subject
