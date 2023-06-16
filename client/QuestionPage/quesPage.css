@@ -214,3 +214,38 @@ footer {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
 }
+
+@keyframes blink {
+  0% {
+    color: red;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes blink2 {
+  0% {
+    color: black;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: black;
+  }
+}
+
+#scoreBlink {
+  animation: blink 1s infinite;
+}
+
+#chancesBlink {
+  animation-name: blink2;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;
+}
+

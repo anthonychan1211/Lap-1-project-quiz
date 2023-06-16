@@ -17,12 +17,18 @@ const displayTopBar = (quesNum, wrongGuess, score) => {
 
   const scoreBar = document.createElement("p");
   scoreBar.innerHTML = `<i class="fa-solid fa-star"></i> Score: ${score}`;
+  /////////////////////
+  scoreBar.id = "p2";   
+  /////////////////////
   topBar.appendChild(scoreBar);
 
   const chancesLeft = document.createElement("p");
   chancesLeft.innerHTML = `${`<i class="fa-solid fa-pen-ruler"></i> `.repeat(
     wrongGuess
   )}${`<i class="fa-solid fa-palette"></i> `.repeat(4 - wrongGuess)}`;
+  /////////////////////
+  chancesLeft.id = "p3"
+  /////////////////////
   topBar.appendChild(chancesLeft);
 };
 
@@ -57,6 +63,11 @@ const displayQues = async (quesNum) => {
 
     choice.addEventListener("click", () => {
       let correct = false;
+      /////////////////////
+      if(document.querySelector("#chancesBlink") != null) {
+        document.querySelector("#chancesBlink").id = "p3"
+      }
+      /////////////////////
       if (choice.textContent == correctAuthor) {
         correct = true;
         score += 5 - wrongGuess;
@@ -85,6 +96,7 @@ const displayQues = async (quesNum) => {
 
 const checkAnswer = (correct, correctAuthor) => {
   resultsSection.textContent = "";
+  
   quesImage = document.querySelector(".image-container img");
   if (correct == true && wrongGuess < 5) {
     zoomLevel = 10;
@@ -113,8 +125,9 @@ const checkAnswer = (correct, correctAuthor) => {
 };
 
 const results = (result, correctAuthor) => {
-  const resultsText = document.createElement("p");
+  const resultsText = document.createElement("p");  
   resultsText.className = "result-text";
+  
   if (result == "correct") {
     resultsText.textContent = `Correct! You scored ${5 - wrongGuess} points.`;
     resultsSection.appendChild(resultsText);
@@ -123,21 +136,28 @@ const results = (result, correctAuthor) => {
     if (quesNum < 5) {
       nextQues(correctAuthor);
     }
-  } else if (result == "incorrect") {
+  } else if (result == "incorrect") {    
+    /////////////////////
+    document.querySelector("#p3").id = "chancesBlink"
+    /////////////////////
     resultsText.textContent = `Oops! You have ${4 - wrongGuess} chance${
       4 - wrongGuess == 1 ? `` : `s`
     } left.`;
+    
     resultsSection.appendChild(resultsText);
   } else if (result == "fail") {
     resultsText.textContent = "Sad! You have no chances left.";
     showDescription();
+    
     resultsSection.appendChild(resultsText);
     if (quesNum < 5) {
       nextQues(correctAuthor);
     }
+    
   }
 
   if (quesNum == 5 && (result == "correct" || result == "fail")) {
+    
     answerSection.childNodes.forEach((button) => {
       button.disabled = true;
       if (button.textContent == correctAuthor) {
@@ -145,6 +165,7 @@ const results = (result, correctAuthor) => {
         button.style.color = "white";
       }
     });
+    
     displayTopBar(quesNum, wrongGuess, score);
     finishGame();
   }
@@ -175,7 +196,9 @@ const nextQues = (correctAuthor) => {
 
 const finishGame = () => {
   const resultsText = resultsSection.childNodes[0];
-  resultsText.textContent = `You have completed the game! Your final score is ${score} points.`;
+  /////////////////////
+  document.querySelector("#p2").id = "scoreBlink"  
+  /////////////////////
   const playAgainSection = document.createElement("div");
   playAgainSection.className = "play-again-section";
   descriptionSection.appendChild(playAgainSection);
@@ -187,6 +210,7 @@ const finishGame = () => {
   playHardMode.classList.add("hard-mode-button");
   playAgainSection.appendChild(playEasyMode);
   playAgainSection.appendChild(playHardMode);
+  
 
   playEasyMode.addEventListener("click", () => {
     fetchStatus = false;
@@ -227,6 +251,10 @@ const zoomOut = () => {
 
 const showDescription = () => {
   descriptionSection.classList.remove("hidden");
+
+  /////////////////////
+  document.querySelector("#p2").innerHTML = `<i class="fa-solid fa-star"></i> Score: ${score}`;
+  ////////////////////
   const image = document.querySelector("#painting");
   const imageUrl = image.src;
   const correctObj = data.find((obj) => obj.imageUrl === imageUrl);
