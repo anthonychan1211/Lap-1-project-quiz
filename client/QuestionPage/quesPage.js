@@ -2,7 +2,7 @@ let difficulty = localStorage.getItem("difficulty");
 
 const fetchData = async (difficulty) => {
   const res = await fetch(
-    `http://localhost:3000/randomQuestions/${difficulty}`
+    `https://lap1-project-backend.onrender.com/randomQuestions/${difficulty}`
   );
   const data = await res.json();
   return data;
