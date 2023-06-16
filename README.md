@@ -1,4 +1,4 @@
-##Lap 1 Project - *Guess the Painter*
+##Lap 1 Project - _Guess the Painter_
 
 ##Description
 
@@ -6,23 +6,23 @@
 
 ##Installation & Usage
 
-* Clone repo onto local device
-* Move into server folder:
-`cd server`
-* Download node modules
-`npm install` / `npm install nodemon`
-* Run server
-`npm run dev` / `nodemon index.js`
-* Move back into main folder
-`cd ..`
-* Open homePage.html with live server
+- Clone repo onto local device
+- Move into server folder:
+  `cd server`
+- Download node modules
+  `npm install` / `npm install nodemon`
+- Run server
+  `npm run dev` / `nodemon index.js`
+- Move back into main folder
+  `cd ..`
+- Open homePage.html with live server
 
 ##Technologies
 
-* Javascript
-* HTML
-* CSS
-* Express
+- Javascript
+- HTML
+- CSS
+- Express
 
 ##Process
 * Picked a subject/field to make a game for - Art
@@ -37,25 +37,29 @@
 * Worked on debugging, styling together
 * Split up again to work on more features, repeated process
 
-##License
-
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-version 3.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-[GNU General Public License](./LICENSE.md) for more details.
-
-##Screenshots / Images
-
-- to be added
+- Picked a subject/field to make a game for - Art
+- Brainstorming ideas and possible games
+- Split up the sub tasks among us
+- Created a Git repo and individual branches
+- Started by writing some pseudo code to break down the logic
+- Half worked on the API, server and logic (backend)
+- Other half worked on the HTML and JS (frontend)
+- Testing our functions with the console and browser throughout coding.
+- After completed the MVP, combined the backend and frontend using Git
+- Worked on debugging, styling together
+- Split up again to work on more features, repeated process
+- Worked on final debugging and styling together
 
 ##Future features
-* Add a 'medium' level
-* Log in system, allow classes to compete
-* Leader board of scores
-* Add more data to the API
-* Host to a website
-* Adapt the game for another subject
+
+- Add a 'medium' level
+- Log in system, allow classes to compete
+- Leader board of scores
+- Add more data to the API
+- Host to a website
+- Adapt the game for another subject
+- Improve UX for the final score
+
+##Bug
+
+- The page is not compatible with all screen sizes
