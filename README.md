@@ -23,6 +23,7 @@
 - HTML
 - CSS
 - Express
+- Node
 
 ##Process
 
