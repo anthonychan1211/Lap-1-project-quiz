@@ -22,8 +22,8 @@
 - Javascript
 - HTML
 - CSS
-- Express
-- Node
+- Node.js
+- Express.js
 
 ##Process
 
