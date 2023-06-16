@@ -2,7 +2,7 @@ let difficulty = localStorage.getItem("difficulty");
 
 const fetchData = async (difficulty) => {
   const res = await fetch(
-    `http://localhost:3000/randomQuestions/${difficulty}`
+    `https://lap1-project-backend.onrender.com/randomQuestions/${difficulty}`
   );
   const data = await res.json();
   return data;
@@ -17,12 +17,14 @@ const displayTopBar = (quesNum, wrongGuess, score) => {
 
   const scoreBar = document.createElement("p");
   scoreBar.innerHTML = `<i class="fa-solid fa-star"></i> Score: ${score}`;
+  scoreBar.id = "p2";
   topBar.appendChild(scoreBar);
 
   const chancesLeft = document.createElement("p");
   chancesLeft.innerHTML = `${`<i class="fa-solid fa-pen-ruler"></i> `.repeat(
     wrongGuess
   )}${`<i class="fa-solid fa-palette"></i> `.repeat(4 - wrongGuess)}`;
+  chancesLeft.id = "p3";
   topBar.appendChild(chancesLeft);
 };
 
@@ -43,7 +45,7 @@ const displayQues = async (quesNum) => {
   quesImage.alt = `Q${quesNum} painting`;
   questionSection.appendChild(quesImage);
 
-  let randomPixel = randomSpotImg() 
+  let randomPixel = randomSpotImg();
 
   let randomizeChoices = data[quesNum - 1].wrongAuthors 
   let randomNum = Math.floor(Math.random() * 5) 
@@ -56,6 +58,9 @@ const displayQues = async (quesNum) => {
 
     choice.addEventListener("click", () => {
       let correct = false;
+      if (document.querySelector("#chancesBlink") != null) {
+        document.querySelector("#chancesBlink").id = "p3";
+      }
       if (choice.textContent == correctAuthor) {
         correct = true;
         score += 5 - wrongGuess;
@@ -65,13 +70,20 @@ const displayQues = async (quesNum) => {
         let newX;
         let newY;
         wrongGuess++;
-        randomPixal[0] > 50
-          ? (newX =
-              randomPixal[0] - 50 + ((randomPixal[0] - 50) / 4) * wrongGuess)
-          : (newX = randomPixal + ((50 - randomPixal[0]) / 4) * wrongGuess);
-        randomPixal[1] > 50
-          ? (newY = randomPixal[1] - 50)
-          : (newY = 50 - randomPixal[1]);
+        randomPixel[0] > 50
+          ? (newX = Math.floor(
+              randomPixel[0] - ((randomPixel[0] - 50) / 4) * wrongGuess
+            ))
+          : Math.floor(
+              (newX = randomPixel[0] + ((50 - randomPixel[0]) / 4) * wrongGuess)
+            );
+        randomPixel[1] > 50
+          ? Math.floor(
+              (newY = randomPixel[1] - ((randomPixel[1] - 50) / 4) * wrongGuess)
+            )
+          : Math.floor(
+              (newY = randomPixel[1] + ((50 - randomPixel[1]) / 4) * wrongGuess)
+            );
         quesImage.style.translate = `-${newX}% -${newY}%`;
         correct = false;
         choice.disabled = true;
@@ -123,6 +135,7 @@ const results = (result, correctAuthor) => {
       nextQues(correctAuthor);
     }
   } else if (result == "incorrect") {
+    document.querySelector("#p3").id = "chancesBlink";
     resultsText.textContent = `Oops! You have ${4 - wrongGuess} chance${
       4 - wrongGuess == 1 ? `` : `s`
     } left.`;
@@ -174,6 +187,7 @@ const nextQues = (correctAuthor) => {
 
 const finishGame = () => {
   const resultsText = resultsSection.childNodes[0];
+  document.querySelector("#p2").id = "scoreBlink";
   resultsText.textContent = `You have completed the game! Your final score is ${score} points.`;
   const playAgainSection = document.createElement("div");
   playAgainSection.className = "play-again-section";
@@ -211,12 +225,13 @@ const runGame = (quesNum, wrongGuess, score) => {
 };
 
 const randomSpotImg = () => {
-  const painting = document.getElementById("painting")
-  const randomX = Math.floor(Math.random() * 100)
-  const randomY = Math.floor(Math.random() * 100)
-  painting.style.translate = `-${randomX}% -${randomY}%`
-  return [randomX, randomY]
-}
+  const painting = document.getElementById("painting");
+  const randomX = Math.floor(Math.random() * 330);
+  const randomY = Math.floor(Math.random() * 330);
+  painting.style.translate = `-${randomX}% -${randomY}%`;
+  painting.style.objectFit = "cover";
+  return [randomX, randomY];
+};
 
 const zoomOut = () => {
   const painting = document.getElementById("painting");
@@ -226,6 +241,9 @@ const zoomOut = () => {
 
 const showDescription = () => {
   descriptionSection.classList.remove("hidden");
+  document.querySelector(
+    "#p2"
+  ).innerHTML = `<i class="fa-solid fa-star"></i> Score: ${score}`;
   const image = document.querySelector("#painting");
   const imageUrl = image.src;
   const correctObj = data.find((obj) => obj.imageUrl === imageUrl);
@@ -235,7 +253,7 @@ const showDescription = () => {
   descriptionTitle.innerHTML = `${correctObj.name} <br>(${correctObj.author})`;
   const description = correctObj.description;
   const quesImage = document.createElement("img");
-  quesImage.className = "desciption-painting";
+  quesImage.className = "description-painting";
   quesImage.src = correctObj.imageUrl;
   quesImage.alt = `Q${quesNum} painting`;
   descriptionSection.appendChild(quesImage);
