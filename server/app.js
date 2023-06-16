@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(logger);
 
 let questions = [];
-//will randomly generate 4 multiple choice wrong answers inside obj.wrongAuthors. 
+//will randomly generate 4 multiple choice wrong answers inside obj.wrongAuthors.
 const generateRandomAnswers = () => {
   let randomIDX = null;
 
@@ -34,7 +34,6 @@ const generateRandomAnswers = () => {
 };
 
 app.get("/", (req, res) => {
-  console.log("ALL THE DATA");
   res.send(data);
 });
 
@@ -55,18 +54,15 @@ app.get("/randomQuestions/hard", (req, res) => {
       ) {
         questions.push({ ...hardLvlData[randomIDX], wrongAuthors: [] });
       }
-
     }
   } catch (error) {
-
-    console.log(error);    
-  }   
+    console.log(error);
+  }
 
   generateRandomAnswers();
-  //console.log(questions)
-  res.send(questions);  
-  questions = []
-})
+  res.send(questions);
+  questions = [];
+});
 
 //will randomly pick 10 questions and their answers in the easy mode
 app.get("/randomQuestions/easy", (req, res) => {
@@ -77,16 +73,16 @@ app.get("/randomQuestions/easy", (req, res) => {
   });
 
   try {
+    while (questions.length < 10) {
+      randomIDX = Math.floor(Math.random() * easyLvlData.length);
 
-    while(questions.length < 10) {
-      randomIDX = Math.floor(Math.random() * easyLvlData.length); 
-  
-      if(questions.some(obj => easyLvlData[randomIDX].name === obj.name) === false){
-
-        questions.push({...easyLvlData[randomIDX], wrongAuthors: []});                        
-      }                  
-    }   
-
+      if (
+        questions.some((obj) => easyLvlData[randomIDX].name === obj.name) ===
+        false
+      ) {
+        questions.push({ ...easyLvlData[randomIDX], wrongAuthors: [] });
+      }
+    }
   } catch (error) {
     console.log(error);
   }
