@@ -7,14 +7,6 @@
 ##Installation & Usage
 
 - Clone repo onto local device
-- Move into server folder:
-  `cd server`
-- Download node modules
-  `npm install` / `npm install nodemon`
-- Run server
-  `npm run dev` / `nodemon index.js`
-- Move back into main folder
-  `cd ..`
 - Open homePage.html with live server
 
 ##Technologies
